@@ -6,15 +6,15 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Currency History Models';
+$this->title = 'Factory Models';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="currency-history-model-index">
+<div class="factory-model-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Currency History Model', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Factory Model', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 
@@ -25,12 +25,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'date_setting',
-            'rate',
 
-            ['class' => 'yii\grid\ActionColumn',
-                'template' =>'{delete}',
-            ],
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 
