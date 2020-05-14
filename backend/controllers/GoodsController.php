@@ -43,10 +43,16 @@ class GoodsController extends Controller
         $searchModel = new GoodsSearchModel();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $factory =  FactoryModel::find()->all();
+        $unit = UnitModel::find()->all();
+        $currency = CurrencyModel::find() ->all();
+        $category = CategoryModel::find() ->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'arrFactory' => ArrayHelper::map($factory,'id','name'),
+            'arrUnit' => ArrayHelper::map($unit,'id','name'),
+            'arrCurrency' => ArrayHelper::map($currency,'id','name'),
+            'arrCategory' => ArrayHelper::map($category,'id','name')
         ]);
     }
 

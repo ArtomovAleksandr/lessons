@@ -75,9 +75,30 @@ class GoodsModel extends \yii\db\ActiveRecord
             'countprice' => 'Countprice',
             'outprice' => 'Outprice',
             'max_order' => 'Max Order',
+            'price' => 'Цена',
         ];
     }
+    /**
+     * Gets query for [[Category]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCauntPrice()
+    {
+        if  ($this->countprice == 0){
+            return ceil( ($this->outprice)*($this->currency->rate));
+        }else{
+            return ceil(($this->inprice)*($this->currency->rate)*((($this->addition)/100)+1));
+        }
 
+    }
+    public function  getYesNo(){
+        if  ($this->countprice == 0){
+            return 'НЕТ';
+        }else{
+            return 'ДА';
+        }
+    }
     /**
      * Gets query for [[Category]].
      *

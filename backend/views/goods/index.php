@@ -31,19 +31,48 @@ $this->params['breadcrumbs'][] = $this->title;
             'catalog',
             'mark',
             'name',
-            'unit_id',
-            'currency_id',
+        //    'unit_id',
+            [
+                'attribute' => 'unit_id',
+                'value' => 'unit.name',
+                'filter' => $arrUnit
+            ],
+     //       'currency_id',
+            [
+                'attribute' => 'currency_id',
+                'value' => 'currency.shortname',
+                'filter' => $arrCurrency
+            ],
             [
                     'attribute' => 'factory_id',
                     'value' => 'factory.name',
                     'filter' => $arrFactory
             ],
          //   'factory_id',
-            'category_id',
+       //     'category_id',
+            [
+                'attribute' => 'category_id',
+                'value' => 'category.name',
+                'filter' => $arrCategory
+            ],
             'inprice',
             'addition',
-            'countprice',
+         //   'countprice',
+            [
+                'attribute' => 'countprice',
+                'value'=> function($model){
+                    return $model->getYesNo();
+                }
+
+            ],
             'outprice',
+            [
+                'attribute' => 'price',
+                'value'=> function($model){
+                   return $model->getCauntPrice();
+                }
+
+            ],
             'max_order',
 
             ['class' => 'yii\grid\ActionColumn'],

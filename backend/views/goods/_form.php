@@ -32,9 +32,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'addition')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'countprice')->textInput() ?>
+    <?= $form->field($model, 'countprice')->checkbox([ 'check'=>$model->countprice,'checked' => true])?>
 
     <?= $form->field($model, 'outprice')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'catalog')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'max_order')->textInput() ?>
 

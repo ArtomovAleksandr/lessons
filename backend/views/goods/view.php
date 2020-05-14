@@ -34,14 +34,45 @@ $this->params['breadcrumbs'][] = $this->title;
             'catalog',
             'mark',
             'name',
-            'unit_id',
-            'currency_id',
-            'factory_id',
-            'category_id',
+       //     'unit_id',
+            [
+                'label' => 'Еденица измерения',
+                'attribute' => 'unit.name',
+            ],
+
+      //      'currency_id',
+            [
+                'label' => 'Валюта',
+                'attribute' => 'currency.name',
+            ],
+       //     'factory_id',
+            [
+                'label' => 'Производитель',
+                'attribute' => 'factory.name',
+            ],
+       //     'category_id',
+            [
+                'label' => 'Категория',
+                'attribute' => 'category.name',
+            ],
             'inprice',
             'addition',
-            'countprice',
+     //       'countprice',
+            [
+                'attribute' => 'countprice',
+                'value'=> function($model){
+                    return $model->getYesNo();
+                }
+
+            ],
             'outprice',
+            [
+                'attribute' => 'price',
+                'value'=> function($model){
+                    return $model->getCauntPrice();
+                }
+
+            ],
             'max_order',
         ],
     ]) ?>
