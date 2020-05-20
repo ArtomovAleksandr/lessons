@@ -25,10 +25,6 @@ class CurrencyController extends Controller
             'access' => [
                'class' => AccessControl::className(),
                 'rules' => [
-//                    [
-//                        'actions' => ['login', 'error'],
-//                        'allow' => true,
-//                    ],
                     [
                         'actions' => ['view', 'index','update'],
                         'allow' => true,
