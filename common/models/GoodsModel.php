@@ -32,6 +32,10 @@ class GoodsModel extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    const ARCHIVE = 1;
+
+    const NOARCHIVE = 0;
+
     public static function tableName()
     {
         return 'goods';
@@ -44,7 +48,7 @@ class GoodsModel extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['unit_id', 'currency_id', 'factory_id', 'category_id', 'countprice', 'max_order'], 'integer'],
+            [['unit_id', 'currency_id', 'factory_id', 'category_id', 'countprice','archive', 'metric_order', 'max_order'], 'integer'],
             [['num', 'catalog'], 'string', 'max' => 50],
             [['mark', 'name'], 'string', 'max' => 100],
             [['inprice', 'addition', 'outprice'], 'string', 'max' => 25],
@@ -73,6 +77,8 @@ class GoodsModel extends \yii\db\ActiveRecord
             'inprice' => 'Inprice',
             'addition' => 'Addition',
             'countprice' => 'Countprice',
+            'archive' => 'Achive',
+            'metric_order' => 'Metric Order',
             'outprice' => 'Outprice',
             'max_order' => 'Max Order',
             'price' => 'Цена',
@@ -94,6 +100,13 @@ class GoodsModel extends \yii\db\ActiveRecord
     }
     public function  getYesNo(){
         if  ($this->countprice == 0){
+            return 'НЕТ';
+        }else{
+            return 'ДА';
+        }
+    }
+    public function  getArchive(){
+        if  ($this->archive == 0){
             return 'НЕТ';
         }else{
             return 'ДА';

@@ -2,9 +2,10 @@
 
 namespace common\models;
 
+use common\models\GoodsModel;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\GoodsModel;
+
 
 /**
  * GoodsSearchModel represents the model behind the search form of `common\models\GoodsModel`.
@@ -38,10 +39,11 @@ class GoodsSearchModel extends GoodsModel
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function searchArchive($params, $goodsArchive)
     {
-        $query = GoodsModel::find();
-
+        $query = GoodsModel::find()->andFilterWhere(['archive' => $goodsArchive]);
+    //    $query = GoodsModel::find()->where(['archive' => $goodsArchive])->all();
+  //      $query ->andFilterWhere(['archive' => GoodsModel::NOARCHIVE]);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

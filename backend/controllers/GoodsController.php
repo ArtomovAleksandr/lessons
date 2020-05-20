@@ -41,7 +41,7 @@ class GoodsController extends Controller
     public function actionIndex()
     {
         $searchModel = new GoodsSearchModel();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->searchArchive(Yii::$app->request->queryParams,GoodsModel::NOARCHIVE);
         $factory =  FactoryModel::find()->all();
         $unit = UnitModel::find()->all();
         $currency = CurrencyModel::find() ->all();
@@ -56,6 +56,23 @@ class GoodsController extends Controller
         ]);
     }
 
+    public function actionArchive()
+    {
+        $searchModel = new GoodsSearchModel();
+        $dataProvider = $searchModel->searchArchive(Yii::$app->request->queryParams,GoodsModel::ARCHIVE);
+        $factory =  FactoryModel::find()->all();
+        $unit = UnitModel::find()->all();
+        $currency = CurrencyModel::find() ->all();
+        $category = CategoryModel::find() ->all();
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'arrFactory' => ArrayHelper::map($factory,'id','name'),
+            'arrUnit' => ArrayHelper::map($unit,'id','name'),
+            'arrCurrency' => ArrayHelper::map($currency,'id','name'),
+            'arrCategory' => ArrayHelper::map($category,'id','name')
+        ]);
+    }
     /**
      * Displays a single GoodsModel model.
      * @param integer $id

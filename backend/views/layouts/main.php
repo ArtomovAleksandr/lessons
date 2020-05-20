@@ -37,6 +37,11 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Товар', 'url' => ['/goods/']],
+        ['label' => 'Категории', 'url' => ['/category']],
+        ['label' => 'Производитель', 'url' => ['/factory']],
+        ['label' => 'Валюта', 'url' => ['/currency']],
+        ['label' => 'История валюты', 'url' => ['/currencyhistory']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

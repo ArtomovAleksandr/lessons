@@ -25,7 +25,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-         //       '/' => 'category/index'
+                '/' => 'goods/index'
             ],
             // ...
         ],

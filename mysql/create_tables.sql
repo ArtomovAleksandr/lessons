@@ -7,7 +7,7 @@ create table category(
 id int primary key auto_increment,
 name varchar(255) not null,
 is_visible boolean default true,
-metric_order int,
+metric_order int,  -- порядок категории
 path_image  varchar(255)
 )engine=innoDB;
 INSERT INTO category(id,is_visible,metric_order,name) VALUES (1,0,0,'Нет категории'),(2,0,2,'Тепловые экраны под распылитель'),(4,0,1,'Тепловые экраны под форсунку'),(5,0,3,'Шайба уплотнительная медная'),(6,0,4,'Шайба уплотнительная алюминиевая'),(7,1,30,'Запчасти к ТНВД тип VE'),(8,0,18,'Дизельные распылители  MOTORPAL'),(9,1,19,'Дизельные распылители FIRAD'),(10,1,9,'Дизельные распылители Denso'),(11,1,5,'Дизельные распылители Bosch'),(12,1,7,'Дизельные распылители Zexel'),(13,1,11,'Дизельные распылители Delphi'),(14,1,22,'Запчасти к рядным ТНВД'),(15,1,35,'Запчасти к ТНВД тип DPC'),(16,0,5,'Дизельные распылители Herzog'),(17,0,100,'Свеча накала SD'),(18,0,110,'Свеча накала Bosch, Beru'),(30,1,50,'Запчасти к CR-системе'),(29,0,140,'Сопутствующий товар'),(22,0,20,'Свеча накала NGK'),(23,0,120,'Электрофакельные свечи'),(24,0,14,'Дизельные распылители ADL'),(25,1,20,'Запчасти форсунок'),(26,0,24,'Запчасти к подкачивающим насосам'),(27,1,40,'Запчасти к ТНВД тип DPS'),(28,1,45,'Запчасти к ТНВД тип DPA'),(31,0,23,'Запчасти регуляторов'),(32,1,141,'Форсунки Stanadyne'),(33,0,51,'Фильтра'),(34,0,21,'Свеча накала HKT'),(35,1,12,'Дизельные распылители Wusetem'),(36,0,52,'Запчасти Двигателя');
@@ -75,7 +75,7 @@ currency_id int,
      on update cascade
 	 on delete cascade,
 
-factory_id int,
+factory_id int, -- производитель
   constraint fk_factoryid_goods
    foreign key(factory_id)
     references factory(id)
@@ -90,6 +90,8 @@ factory_id int,
 inprice varchar(25), -- входная цена
 addition varchar(25) default '75', -- наценка в %
 countprice boolean default true, -- вычисляемая цена
+archive boolean default false, -- в архиве
+metric_order int default 25, -- порядок в категории
 outprice varchar(25) default 0, -- выходная цена
 max_order int default 0 -- максимальное количество в заказе
 

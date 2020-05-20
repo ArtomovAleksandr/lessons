@@ -65,6 +65,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
 
             ],
+            [
+                'attribute' => 'archive',
+                'value'=> function($model){
+                    return $model->getArchive();
+                }
+
+            ],
+            'metric_order',
+
             'outprice',
             [
                 'attribute' => 'price',
@@ -73,6 +82,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
 
             ],
+//            [
+//                'attribute' => 'price',
+//                'value'=> function($model){
+//                    return $model->getCauntPrice();
+//                }
+//
+//            ],
             'max_order',
         ],
     ]) ?>
