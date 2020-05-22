@@ -2,6 +2,8 @@ drop database if exists dieselclub;
 create database if not exists academy character set utf8 default collate utf8_general_ci;
 
 use lessons;
+select * from `goods`;
+delete from `goods` where id=3;
 
 create table category(
 id int primary key auto_increment,
@@ -55,6 +57,7 @@ name varchar(50) not null
 INSERT INTO unit (id,name)values(1,"шт."),(2,"к-т"),(3,"см.");
 
 -- товар
+-- drop table `goods`;
 create table `goods`(
 id int primary key auto_increment,
 num varchar(50), -- кассовый номер
@@ -87,12 +90,13 @@ factory_id int, -- производитель
     references category(id)
         on update cascade
         on delete cascade,
-inprice varchar(25), -- входная цена
+inprice varchar(25) default '0', -- входная цена
 addition varchar(25) default '75', -- наценка в %
 countprice boolean default true, -- вычисляемая цена
 archive boolean default false, -- в архиве
 metric_order int default 25, -- порядок в категории
 outprice varchar(25) default 0, -- выходная цена
-max_order int default 0 -- максимальное количество в заказе
+max_order int default 6 -- максимальное количество в заказе
 
 )engine=innoDB;
+

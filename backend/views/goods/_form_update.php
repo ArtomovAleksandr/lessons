@@ -30,16 +30,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'inprice')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'addition')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'countprice')->checkbox([ 'check'=>$model->countprice])?>
+
+    <?= $form->field($model, 'archive')->checkbox([ 'check'=>$model->archive])?>
+
+    <?= $form->field($model, 'metric_order')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'outprice')->textInput(['maxlength' => true]) ?>
 
 
 
-
-
-
-
-
-
-
+    <?= $form->field($model, 'max_order')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

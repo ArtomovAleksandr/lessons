@@ -75,7 +75,7 @@ class GoodsController extends Controller
         $unit = UnitModel::find()->all();
         $currency = CurrencyModel::find() ->all();
         $category = CategoryModel::find() ->all();
-        return $this->render('index', [
+        return $this->render('index_archive', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'arrFactory' => ArrayHelper::map($factory,'id','name'),

@@ -13,9 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Currency Model', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+
 
 
     <?= GridView::widget([
@@ -23,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+      //      'id',
             'name',
             'shortname',
             'rate',

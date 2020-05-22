@@ -36,7 +36,7 @@ class CategoryController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => CategoryModel::find(),
+            'query' => CategoryModel::find()->orderBy('metric_order')
         ]);
 
         return $this->render('index', [
