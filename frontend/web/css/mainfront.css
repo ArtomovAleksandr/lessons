@@ -1,0 +1,7 @@
+#top{
+    background-color: rgb(233,251,255);
+    border-bottom: 1px solid #e2e2e2;
+}
+.fa-phone, .fa-user, .basket, .fa-share, .fa-trash, .fa-shopping-cart{
+    font-size: 25px;
+}
