@@ -24,6 +24,10 @@
     left: 25px;
     border-radius: 50%;
 }
-/*.fa-phone, .fa-user, .basket, .fa-share, .fa-trash, .fa-shopping-cart{*/
-/*    font-size: 25px;*/
-/*}*/
+#logo{
+    box-shadow: rgb(117,117,117)-5px 5px 10px 0px;
+}
+#repead-images{
+    background-image: url("../images/resourses/b1.png");
+    background-repeat: repeat-x;
+}
