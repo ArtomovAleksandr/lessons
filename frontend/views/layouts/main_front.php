@@ -24,13 +24,15 @@ AppAssetMainFront::register($this);
         <?php $this->head() ?>
 <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     </head>
     <body>
 <?php  $this->beginBody() ?>
 <div class="container">
     <div class="row mt-2 ml-1 mr-1" id="top">
-        <div class="col text-right">
-            <a href="#">
+        <div class="col text-center">
+            <a href="#" style="pointer-events: none">
                 <i class="fa fa-phone"></i>
                 <span class="d-none d-inline style-fa">+038 067 564-66-42</span>
             </a>
@@ -46,7 +48,7 @@ AppAssetMainFront::register($this);
     </div>
 
 </div>
-<h1>New Loyout</h1>
+
 <?php $this->endBody() ?>
     </body>
 </html>

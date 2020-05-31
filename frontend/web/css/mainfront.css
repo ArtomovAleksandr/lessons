@@ -1,7 +1,29 @@
 #top{
     background-color: rgb(233,251,255);
     border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 5px;
 }
-.fa-phone, .fa-user, .basket, .fa-share, .fa-trash, .fa-shopping-cart{
-    font-size: 25px;
+.fa-phone,.style-fa, .basket{
+    font-size: 25px !important;
 }
+.basket{
+    position: relative;
+    padding-left: 15px;
+}
+#goods-basket{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(255,106,30,.9);
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+    font-weight: 600;
+    color: #ebf3e7;
+    top: -10px;
+    left: 25px;
+    border-radius: 50%;
+}
+/*.fa-phone, .fa-user, .basket, .fa-share, .fa-trash, .fa-shopping-cart{*/
+/*    font-size: 25px;*/
+/*}*/
