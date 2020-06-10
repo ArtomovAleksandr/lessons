@@ -16,7 +16,16 @@ $this->title = 'Категории товара';
 <!--    <p>-->
 
 <!--    </p>-->
-
+     <?php
+     echo '<pre>';
+    // print_r($dataProvider->getModels());
+     foreach ($dataProvider->getModels() as &$value) {
+    //     $first=$value ['_attributes:yii\db\BaseActiveRecord:private'];
+      //   print_r($first);
+        print_r($value);// = $value * 2;
+     }
+     echo "</pre>";
+     ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -31,6 +40,7 @@ $this->title = 'Категории товара';
 
 //            ['class' => 'yii\grid\ActionColumn'],
         ],
+
     ]); ?>
 
 
