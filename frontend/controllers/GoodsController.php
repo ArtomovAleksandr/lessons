@@ -2,9 +2,11 @@
 
 namespace frontend\controllers;
 
+use common\models\FactoryModel;
 use Yii;
 use common\models\GoodsModel;
 use yii\data\ActiveDataProvider;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,13 +37,21 @@ class GoodsController extends Controller
      */
     public function actionIndex($id)
     {
+        $query = GoodsModel::find()->where(['category_id' => $id])-> andWhere(['archive'=>false])->orderBy('metric_order');
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize' => 10]);
+
+//        $models = $query->offset($pages->offset)
+//            ->limit($pages->limit)
+//            ->all();
         $dataProvider = new ActiveDataProvider([
-            'query' => GoodsModel::find(),
+            'query' => $query,
         ]);
 
         return $this->render('index', [
+//            'models' => $models,
+            'pages' => $pages,
             'dataProvider' => $dataProvider,
-            'id'=>$id,
         ]);
     }
 

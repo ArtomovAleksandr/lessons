@@ -39,13 +39,10 @@ class CategoryController extends Controller
         $query = CategoryModel::find()->where(['is_visible' => true])->orderBy('metric_order');
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize' => 10]);
-    //    $pages->defaultPageSize = 10;
+
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-//        $dataProvider = new ActiveDataProvider([
-//            'query' => CategoryModel::find()->where(['is_visible' => true])->orderBy('metric_order')
-//        ]);
 
         return $this->render('index', [
             'models' => $models,
