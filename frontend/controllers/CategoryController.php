@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\CategoryModel;
 use yii\data\ActiveDataProvider;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,13 +36,21 @@ class CategoryController extends Controller
      */
     public function actionIndex()
     {
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => CategoryModel::find()->where(['is_visible' => true])->orderBy('metric_order')
-        ]);
+        $query = CategoryModel::find()->where(['is_visible' => true])->orderBy('metric_order');
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize' => 10]);
+    //    $pages->defaultPageSize = 10;
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+//        $dataProvider = new ActiveDataProvider([
+//            'query' => CategoryModel::find()->where(['is_visible' => true])->orderBy('metric_order')
+//        ]);
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'models' => $models,
+            'pages' => $pages,
+         //   'dataProvider' => $dataProvider,
         ]);
     }
 

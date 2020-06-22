@@ -106,122 +106,122 @@ AppAssetMainFront::register($this);
 //?>
 <div class="container mt-3">
     <?= $content ?>
-    <h5><span class="badge badge-light">ВСЕ КАТЕГОРИИ ТОВАРА</span></h5>
-    <div class="row mb-2">
-
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 1</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 2</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 3</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 4</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 5</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 6</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 7</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="">
-                <div class="product-border">
-                    <div class="product-show">
-                        <div class="image">
-                            <img src="../images/resourses/no-photo.jpg" alt="no image">
-                        </div>
-                        <div class="capture">
-                            <h4>Категория 8</h4>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
+<!--    <h5><span class="badge badge-light">ВСЕ КАТЕГОРИИ ТОВАРА</span></h5>-->
+<!--    <div class="row mb-2">-->
+<!---->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 1</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 2</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 3</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 4</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 5</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 6</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 7</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
+<!--            <a href="">-->
+<!--                <div class="product-border">-->
+<!--                    <div class="product-show">-->
+<!--                        <div class="image">-->
+<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
+<!--                        </div>-->
+<!--                        <div class="capture">-->
+<!--                            <h4>Категория 8</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 <?php $this->endBody() ?>
     </body>
