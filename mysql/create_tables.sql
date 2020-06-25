@@ -96,7 +96,10 @@ countprice boolean default true, -- вычисляемая цена
 archive boolean default false, -- в архиве
 metric_order int default 25, -- порядок в категории
 outprice varchar(25) default 0, -- выходная цена
-max_order int default 6 -- максимальное количество в заказе
+max_order int default 6, -- максимальное количество в заказе
+path_image  varchar(255) default null -- путь к рисунку
 
 )engine=innoDB;
-
+-- select * from `goods`;
+-- update `goods` set metric_order=40 where id = 4;
+-- alter table `goods` add path_image  varchar(255) default null;

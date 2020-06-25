@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\CategoryModel;
 use common\models\FactoryModel;
 use Yii;
 use common\models\GoodsModel;
@@ -40,18 +41,21 @@ class GoodsController extends Controller
         $query = GoodsModel::find()->where(['category_id' => $id])-> andWhere(['archive'=>false])->orderBy('metric_order');
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize' => 10]);
-
-//        $models = $query->offset($pages->offset)
-//            ->limit($pages->limit)
-//            ->all();
+        $category=CategoryModel::findOne(['id'=>$id]);
+        $factorys = FactoryModel::find()->all();
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
         return $this->render('index', [
-//            'models' => $models,
+            'models' => $models,
             'pages' => $pages,
             'dataProvider' => $dataProvider,
+            'category' => $category,
+            'factorys' => $factorys,
         ]);
     }
 

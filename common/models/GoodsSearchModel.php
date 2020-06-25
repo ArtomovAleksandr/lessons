@@ -19,7 +19,7 @@ class GoodsSearchModel extends GoodsModel
     {
         return [
             [['id', 'unit_id', 'currency_id', 'factory_id', 'category_id', 'countprice', 'max_order'], 'integer'],
-            [['num', 'catalog', 'mark', 'name', 'inprice', 'addition', 'outprice'], 'safe'],
+            [['num', 'catalog', 'mark', 'name', 'inprice', 'addition', 'outprice','path_image'], 'safe'],
         ];
     }
 
@@ -75,7 +75,8 @@ class GoodsSearchModel extends GoodsModel
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'inprice', $this->inprice])
             ->andFilterWhere(['like', 'addition', $this->addition])
-            ->andFilterWhere(['like', 'outprice', $this->outprice]);
+            ->andFilterWhere(['like', 'outprice', $this->outprice])
+            ->andFilterWhere(['like','path_image',$this->path_image]);
 
         return $dataProvider;
     }

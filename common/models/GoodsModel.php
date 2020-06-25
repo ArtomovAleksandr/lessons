@@ -51,6 +51,7 @@ class GoodsModel extends \yii\db\ActiveRecord
             [['unit_id', 'currency_id', 'factory_id', 'category_id', 'countprice','archive', 'metric_order', 'max_order'], 'integer'],
             [['num', 'catalog'], 'string', 'max' => 50],
             [['mark', 'name'], 'string', 'max' => 100],
+            [['path_image'],'string','max' => 255],
             [['inprice', 'addition', 'outprice'], 'string', 'max' => 25],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => CategoryModel::className(), 'targetAttribute' => ['category_id' => 'id']],
             [['currency_id'], 'exist', 'skipOnError' => true, 'targetClass' => CurrencyModel::className(), 'targetAttribute' => ['currency_id' => 'id']],
@@ -82,6 +83,7 @@ class GoodsModel extends \yii\db\ActiveRecord
             'outprice' => 'Outprice',
             'max_order' => 'Max Order',
             'price' => 'Цена',
+            'path_image' => 'Картинка'
         ];
     }
     /**
@@ -150,5 +152,15 @@ class GoodsModel extends \yii\db\ActiveRecord
     public function getUnit()
     {
         return $this->hasOne(UnitModel::className(), ['id' => 'unit_id']);
+    }
+
+    public function getFactorys($factorys, $id){
+        echo 'id ='. print_r($id);
+        foreach ($factorys as $factory):
+            echo 'factory ='. print_r($factory);
+            if($factory->id == $id){
+                return $factory->name;
+            }
+        endforeach;
     }
 }

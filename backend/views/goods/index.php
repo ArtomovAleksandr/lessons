@@ -75,6 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ],
             'max_order',
+            'path_image',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
