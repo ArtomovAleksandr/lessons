@@ -88,10 +88,48 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="order">
                             <button>
-                                <i class="fa fa-plus" aria-hidden="true">
-
-                                </i>
+                                <i class="fa fa-plus" aria-hidden="true"></i>
                             </button>
+                        </div>
+                    </div>
+                    <div class="basket-show">
+                        <div class="basket-order-head">
+                            <button>
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </button>
+                        <div class="basket-name">
+                            <div class="basket-description"><?= $model->name ?></div>
+                            <div class="basket-unit"><?= $model->catalog ?></div>
+                        </div>
+                        </div>
+                        <div class="order-main">
+                            <div class="add-cart-wrap">
+                                <div class="select-quantity-minus">
+                                    <button class="select-quantity-button" disabled>
+                                        <i class="fa fa-minus" aria-hidden="false"></i>
+                                    </button>
+                                </div>
+                                <div class="current-quantity">
+                                    <input type="text" value="1" title="Количество товара">
+                                </div>
+                                <div class="select-quantity-plus">
+                                    <button class="select-quantity-button">
+                                        <i class="fa fa-plus" aria-hidden="false"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <button class="to-basket">В КОРЗИНУ</button>
+                        </div>
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                        <div class="price-box">
+                            <div class="order-price-fixed">Сумма товара</div>
+                            <div class="total-price-curency">
+                                <div class="total-price">17.5</div>
+                                <div class="curency">грн.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
