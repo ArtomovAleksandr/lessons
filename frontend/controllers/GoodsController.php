@@ -4,10 +4,12 @@ namespace frontend\controllers;
 
 use common\models\CategoryModel;
 use common\models\FactoryModel;
+use common\models\UnitModel;
 use Yii;
 use common\models\GoodsModel;
 use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -42,7 +44,8 @@ class GoodsController extends Controller
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize' => 10]);
         $category=CategoryModel::findOne(['id'=>$id]);
-        $factorys = FactoryModel::find()->all();
+        $factory = FactoryModel::find()->all();
+        $unit = UnitModel::find()->all();
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
@@ -55,7 +58,8 @@ class GoodsController extends Controller
             'pages' => $pages,
             'dataProvider' => $dataProvider,
             'category' => $category,
-            'factorys' => $factorys,
+            'factorys' => ArrayHelper::map($factory,'id','name'),
+            'units' => ArrayHelper::map($unit,'id','name'),
         ]);
     }
 

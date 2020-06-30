@@ -70,19 +70,21 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                             <div class="capture-factory">
                                 <div class="capture-descript">Производитель</div>
-                                <div class="capture-name"><?= $model->factory_id ?></div>
+                                <?php $factoryid = $model->factory_id ?>
+                                <div class="capture-name"><?= $factorys[$factoryid] ?></div>
                             </div>
                             <div class="capture-catalog">
                                 <div class="capture-descript">Каталожный номер</div>
                                 <div class="capture-name"><?= $model->catalog ?></div>
                             </div>
                             <div class="capture-unit">
-                                <div class="capture-descript">Каталожный номер</div>
-                                <div class="capture-name"><?= $model->unit_id ?></div>
+                                <div class="capture-descript">Еденица измер.</div>
+                                <?php $unitid = $model->unit_id ?>
+                                <div class="capture-name"><?= $units[$unitid]?></div>
                             </div>
                             <div class="capture-price">
                                 <div class="capture-descript-price">Цена</div>
-                                <div class="capture-name-price"><?= $model->outprice ?></div>
+                                <div class="capture-name-price"><?= $model->getCauntPrice() ?></div>
                                 <div class="capture-descript">гр.</div>
                             </div>
                         </div>
@@ -127,7 +129,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="price-box">
                             <div class="order-price-fixed">Сумма товара</div>
                             <div class="total-price-curency">
-                                <div class="total-price">17.5</div>
+                                <div class="total-price"><?= $model->getCauntPrice() ?></div>
                                 <div class="curency">грн.</div>
                             </div>
                         </div>
