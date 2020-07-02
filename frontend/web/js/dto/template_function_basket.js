@@ -2,6 +2,7 @@ function ishaveStorage(namestorage) {
     if (localStorage.getItem(namestorage) !== null) {
         return true;
     }
+    console.log('нет такого -'+namestorage);
     return false;
 }
 function readStorage(namestorage) {
