@@ -121,7 +121,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
 
                             </div>
-                            <button class="to-basket">В КОРЗИНУ</button>
+                            <button class="to-basket" value="<?= $model->id ?>">В КОРЗИНУ</button>
                         </div>
                         <div class="line-box">
                             <div class="line"></div>
@@ -139,7 +139,14 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php endforeach; ?>
         </div>
     </div>
-
+    <?php
+    $this->registerJsFile('@web/js/template_function_basket.js');
+    $this->registerJsFile('@web/js/DTOGoodsStorage.js');
+    $this->registerJsFile('@web/js/goods_category.js',['depends'=>
+        'yii\web\YiiAsset',
+        'yii\bootstrap4\BootstrapAsset',
+    ]);
+    ?>
 
 
 

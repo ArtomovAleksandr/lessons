@@ -57,9 +57,9 @@
 .product a{
     text-decoration: none;
 }
-/*.display-off{*/
-/*    display: none;*/
-/*}*/
+.display-off{
+    display: none;
+}
 .product-border{
     border: black 1px solid !important;
     border-radius: 10px !important;
@@ -141,7 +141,7 @@
 }
 .basket-show{
     padding: 8px;
-    /*display: none;*/
+    display: none;
     flex-direction: column;
 }
 .basket-order-head{

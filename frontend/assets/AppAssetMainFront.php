@@ -12,10 +12,10 @@ class AppAssetMainFront extends AssetBundle
        'css/mainfront.css'
      ];
     public $js = [
-        'js/custom.js'
+    //    'js/custom.js'
      ];
      public $depends = [
-    'yii\web\YiiAsset',
+      'yii\web\YiiAsset',
      'yii\bootstrap4\BootstrapAsset',
      ];
 }
