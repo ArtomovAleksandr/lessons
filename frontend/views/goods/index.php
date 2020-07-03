@@ -24,9 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="product-border">
                     <div class="image">
                        <?php
-                        if($model-> path_image !== NULL){ ?>
+                        if($model-> path_image != NULL){ ?>
                           <img src="/images/goods/<?= $model->path_image?>" alt = "no image">
-                      <?php    }
+                      <?php
+                        }
                         ?>
                     </div>
                     <div class="capture-order">

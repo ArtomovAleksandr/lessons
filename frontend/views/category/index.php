@@ -5,9 +5,10 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\LinkPager;
+?>
+<div class="container mt-3">
 
-/* @var $this yii\web\View */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+    <?php
 
 $this->title = 'ВСЕ КАТЕГОРИИ ТОВАРА';
 //$this->params['breadcrumbs'][] = $this->title;
@@ -52,3 +53,5 @@ $this->title = 'ВСЕ КАТЕГОРИИ ТОВАРА';
 
 
 </div>
+</div>
+

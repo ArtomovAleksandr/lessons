@@ -1,5 +1,5 @@
 $(function () {
-     var namestorage = 'basketstorge';
+     var namestorage = 'basketstorage';
     class Storage {
         constructor(id,quantity){
             this.id=id;
@@ -41,6 +41,7 @@ $(function () {
     });
     $('.info-client-name input').bind('input',function (e) {
         let value=e.target.value;
+   //    console.log('client input ='+value);
         if((value.length>3)&&!(value.match(/[><;]+/))){
           //  if(value.match(/[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}/)==null){
                 $(this).css('color','green');
@@ -72,7 +73,7 @@ $(function () {
 
 
 
-      if(!ishaveStorahe(namestorage)){
+      if(!ishaveStorage(namestorage)){
           alert("Ошибка, запчастeй нет в корзине")
           return;
       }

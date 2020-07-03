@@ -7,9 +7,9 @@
     //    conteinerproduct.empty();
         let Arraygoods = readStorage(namestorage);
 
-        console.log('Arraygoods ='+ Arraygoods);
+    //    console.log('Arraygoods ='+ Arraygoods);
         if(Arraygoods==false){
-            console.log('Arraygoods нет');
+       //     console.log('Arraygoods нет');
             return;
         }
         let Arraygoodsdata=Arraygoods.goods;
@@ -61,7 +61,7 @@
     }
 
     createItems();
-  ///  createTotalPaimentPrice();
+    createTotalPaimentPrice();
     function createTotalPaimentPrice(){
         let allcheckboxchecked=$('.conteiner-product').find( "input[type=checkbox]:checked").get();
         let summ=0;

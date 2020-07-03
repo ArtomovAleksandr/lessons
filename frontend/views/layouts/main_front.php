@@ -21,6 +21,7 @@ AppAssetMainFront::register($this);
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?php $this->registerCsrfMetaTags() ?>
         <?php $this->head() ?>
 <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -78,151 +79,9 @@ AppAssetMainFront::register($this);
         </div>
     </nav>
 </div>
-<?php
-//echo Nav::widget([
-//'items' => [
-//[
-//'label' => 'Home',
-//'url' => ['site/index'],
-//'linkOptions' => [...],
-//],
-//[
-//'label' => 'Dropdown',
-//'items' => [
-//['label' => 'Level 1 - Dropdown A', 'url' => '#'],
-//'<li class="divider"></li>',
-//'<li class="dropdown-header">Dropdown Header</li>',
-//['label' => 'Level 1 - Dropdown B', 'url' => '#'],
-//],
-//],
-//[
-//'label' => 'Login',
-//'url' => ['site/login'],
-//'visible' => Yii::$app->user->isGuest
-//],
-//],
-//'options' => ['class' =>'nav-pills'], // set this to nav-tab to get tab-styled navigation
-//]);
-//?>
-<div class="container mt-3">
-    <?= $content ?>
-<!--    <h5><span class="badge badge-light">ВСЕ КАТЕГОРИИ ТОВАРА</span></h5>-->
-<!--    <div class="row mb-2">-->
-<!---->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 1</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 2</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 3</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 4</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 5</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 6</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 7</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--        <div class="product col-lg-3 col-md-3 col-sm-6">-->
-<!--            <a href="">-->
-<!--                <div class="product-border">-->
-<!--                    <div class="product-show">-->
-<!--                        <div class="image">-->
-<!--                            <img src="../images/resourses/no-photo.jpg" alt="no image">-->
-<!--                        </div>-->
-<!--                        <div class="capture">-->
-<!--                            <h4>Категория 8</h4>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--    </div>-->
-</div>
+
+<?= $content ?>
+
 <?php $this->endBody() ?>
     </body>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

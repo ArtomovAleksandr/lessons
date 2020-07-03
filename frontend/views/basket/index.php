@@ -1,10 +1,15 @@
 <?php
 
-use yii\helpers\Html;
-use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+use yii\helpers\Html;
+use yii\widgets\Pjax;
+use yii\bootstrap\ActiveForm;
+$script_send = <<< JS
+
+// alert("Nope, don't do the thing");
+JS;
+
+$this->registerJs($script_send);
 
 $this->title = 'Goods Models';
 $this->params['breadcrumbs'][] = $this->title;
@@ -29,7 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     </button>
                 </div>
             </div>
+            <?php  Pjax::begin();        ?>
+            <?php $form=ActiveForm::begin() ?>
             <div class="conteiner-product">
+
 
             </div>
             <div class="buy product-border">
@@ -55,9 +63,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                 </div>
-                <button id="create-order">Оформить заказ</button>
+                <?= Html::submitButton('Оформить заказ', ['id' => 'create-order']) ?>
             </div>
-
+            <?php ActiveForm::end() ?>
+            <?php Pjax::end() ?>
         </div>
 
     </div>
@@ -70,6 +79,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'yii\bootstrap4\BootstrapAsset',
     ]);
     $this->registerJsFile('@web/js/user_basket.js',['depends'=>
+        'yii\web\YiiAsset',
+        'yii\bootstrap4\BootstrapAsset',
+    ]);
+    $this->registerJsFile('@web/js/user_bascket_create_order.js',['depends'=>
         'yii\web\YiiAsset',
         'yii\bootstrap4\BootstrapAsset',
     ]);
