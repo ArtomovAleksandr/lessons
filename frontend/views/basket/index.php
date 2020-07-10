@@ -6,7 +6,52 @@ use yii\widgets\Pjax;
 use yii\bootstrap\ActiveForm;
 $script_send = <<< JS
 
-// alert("Nope, don't do the thing");
+   function createNewArray(arrs){
+    let vals = [];
+    if(!Array.isArray(arrs)){
+        return null;
+    }
+     if(arrs==null || arrs.length == 0){
+         return null;
+     }
+    
+    for (let arr of arrs){
+         vals.push({
+           'id':arr.id,
+           'qw':arr.quantity,
+         })  
+    };
+    return vals;
+   }
+ $('#create-order').click(function (e) {
+     e.preventDefault();
+     let namestorage = 'basketstorage';
+      if(!ishaveStorage(namestorage)){
+           alert("Ошибка, запчастeй нет в корзине")
+           return;
+      }
+      let storage=readStorage(namestorage);
+     
+      let data = createNewArray(storage.goods);
+     $.ajax({
+      
+       url:'/goodsorder',
+       data:{
+           name:'saja',
+           fone:'456-4893',
+           goods:data,
+           },
+       type:'POST',
+       success:function(res) {
+         console.log('success'+res);
+       },
+       error:function() {
+         console.log('error');
+       }
+     
+     
+     });
+ });
 JS;
 
 $this->registerJs($script_send);
@@ -34,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </button>
                 </div>
             </div>
-            <?php  Pjax::begin();        ?>
+<!--            --><?php // Pjax::begin();        ?>
             <?php $form=ActiveForm::begin() ?>
             <div class="conteiner-product">
 
@@ -66,7 +111,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::submitButton('Оформить заказ', ['id' => 'create-order']) ?>
             </div>
             <?php ActiveForm::end() ?>
-            <?php Pjax::end() ?>
+<!--            --><?php //Pjax::end() ?>
         </div>
 
     </div>

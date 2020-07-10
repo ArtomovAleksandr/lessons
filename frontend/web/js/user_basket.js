@@ -90,7 +90,8 @@
         }
         createTotalPaimentPrice();
     });
-    $(".button-plus").click(function () {
+    $(".button-plus").click(function (e) {
+             e.preventDefault();
              let selectquantity=$(this).parents('.select-quantity');
              let inputelem=$(selectquantity).children('.current-quantity-basket').find('input');
              let priceelem=$(selectquantity).children('.pirice-elem').children('.price-hidden').val();
@@ -117,7 +118,8 @@
              createTotalPaimentPrice();
 
     });
-    $(".button-minus").click(function () {
+    $(".button-minus").click(function (e) {
+        e.preventDefault();
        // alert("Handler for .click() called.");
         let selectquantity=$(this).parents('.select-quantity');
         let inputelem=$(selectquantity).children('.current-quantity-basket').find('input');

@@ -84,7 +84,7 @@ factory_id int, -- производитель
     references factory(id)
         on update cascade
         on delete cascade,
- category_id int,
+ category_id int,   -- категория
   constraint fk_categoryid_goods
    foreign key(category_id)
     references category(id)
@@ -100,6 +100,40 @@ max_order int default 6, -- максимальное количество в з�
 path_image  varchar(255) default null -- путь к рисунку
 
 )engine=innoDB;
--- select * from `goods`;
+-- заказ
+create table `order`(
+id int primary key auto_increment,  -- первичній ключ
+create_date varchar(50) not null,  -- время создания
+name varchar(255) default '',     -- имя 
+fone varchar(255) not null,   -- телефон
+done boolean default false,   -- отметка віполнения 
+description text default '',  -- поясненмя
+countgoods int default 0,  -- количество товара
+totalorder varchar(255)   -- сумма товара
+)engine=innoDB;
+
+create table `goodsorder`(
+id int primary key auto_increment,
+quantity int,
+order_id int,
+constraint fk_orderid_goodsorder
+    foreign key(order_id)
+    references `order`(id)
+        on update cascade
+        on delete cascade,
+goods_id int,
+constraint fk_goodsid_goodsorder
+    foreign key(goods_id)
+    references `goods`(id)
+        on update cascade
+        on delete cascade
+)engine=innoDB;
+
+ select * from `order`;
 -- update `goods` set metric_order=40 where id = 4;
 -- alter table `goods` add path_image  varchar(255) default null;
+--  select * from `order`;
+ drop table `order`;
+delete from `order` where id = 1;
+insert into `order` (create_date,name,fone,totalorder) value('2020','vasa','0675647832','200.45');
+
