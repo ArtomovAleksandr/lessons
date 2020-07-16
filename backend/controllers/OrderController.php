@@ -115,7 +115,7 @@ class OrderController extends Controller
             $total += $model->sum;
         }
 
-        return $this->render('update1', [
+        return $this->render('infoorder', [
             'models' => $models,
             'obg'=> $obj,
             'total' => $total,
