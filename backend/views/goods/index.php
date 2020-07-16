@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => $arrCurrency
             ],
             [
+                    'label' => 'Производитель',
                     'attribute' => 'factory_id',
                     'value' => 'factory.name',
                     'filter' => $arrFactory
@@ -52,6 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
          //   'factory_id',
        //     'category_id',
             [
+                'label' => 'Категория',
                 'attribute' => 'category_id',
                 'value' => 'category.name',
                 'filter' => $arrCategory

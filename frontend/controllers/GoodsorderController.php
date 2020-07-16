@@ -95,11 +95,6 @@ class GoodsorderController extends Controller
 
             return 'Запрос принят!';
         }
-    //   $rq = \Yii::$app->request->post();
-     //   return $rq;
-//        if($form_model->load(\Yii::$app->request->post())){
-//            var_dump($form_model);
-//        }
 
     }
 

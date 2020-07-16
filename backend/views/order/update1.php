@@ -1,5 +1,6 @@
 <?php
 
+use common\models\GoodsModel;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -18,17 +19,23 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'name',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+    <?php
+    var_dump($models);
+    $arr = array(1, 2, 3, 4);
+    foreach ($arr as &$value) {
+        $value = $value * 2;
+        echo '<p>'. $value.'</p>';
+    }
+    foreach ($models as &$model){
+               echo 'idx ='.$model['goods_id'];
+           }
+    echo '<br/>';
+    var_dump($obg);
+     echo '<br/>';
+     echo 'total =' . $total;
+    ?>
+   
 
 
 </div>

@@ -20,9 +20,8 @@ use Yii;
  */
 class OrderModel extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
+  //  public $name;
+
     public static function tableName()
     {
         return 'order';
@@ -66,6 +65,6 @@ class OrderModel extends \yii\db\ActiveRecord
      */
     public function getGoodsorders()
     {
-        return $this->hasMany(Goodsorder::className(), ['order_id' => 'id']);
+        return $this->hasMany(GoodsorderModel::className(), ['order_id' => 'id']);
     }
 }

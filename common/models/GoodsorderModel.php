@@ -13,9 +13,12 @@ use Yii;
  */
 class GoodsorderModel extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
+    public $num =''; //кассовый номер
+    public $catalog ='';
+    public $mark = '';
+    public $name =''; //имя товара
+    public $price ='';
+    public $sum ='';
     public static function tableName()
     {
         return 'goodsorder';
