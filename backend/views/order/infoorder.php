@@ -17,25 +17,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Factory Model', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
-
-
     <?php
-    var_dump($models);
-    $arr = array(1, 2, 3, 4);
-    foreach ($arr as &$value) {
-        $value = $value * 2;
-        echo '<p>'. $value.'</p>';
-    }
-    foreach ($models as &$model){
-               echo 'idx ='.$model['goods_id'];
-           }
-    echo '<br/>';
-    var_dump($obg);
-     echo '<br/>';
-     echo 'total =' . $total;
+
+    $idx =1;
+    echo "<table class='table'>";
+    echo "<tr><td>#</td><td>Номер</td><td>Каталог</td><td>Маркировка<td/><td>Название</td><td>Цена</td><td>Количество</td><td>Сумма</td><td></td><td></td></tr>";
+
+
+    foreach ($models as $model){
+        var_dump($model);
+        echo "<tr><td>{$idx}</td><td>{$model ->num}</td><td>{$model ->catalog}</td><td>{$model -> mark}<td/><td>{$model ->name}</td><td>{$model ->price}</td><td>{$model ->quantity }</td><td>{$model ->sum}</td><td>"?><?= Html::a('Изменить', ['order/updategoods', 'id' =>$model -> id], ['class' => 'btn btn-primary'])  ?><?php echo "</td><td>"?><?= Html::a('Удалить', ['order/deletegoods', 'id' =>$model -> id], ['class' => 'btn btn-danger']) ?><?php echo "</td></tr>";
+//        <a class='btn btn-primary' href='order/updаtegoods?id={$model -> id }'>Редактировать</a>
+        $idx+=1;
+   }
+    echo "<tr><td></td><td>1</td><td>2</td><td>3<td/><td>4</td><td>5</td><td>Cумма</td><td>{$total}</td><td></td><td></td></tr>";
+    echo "</table>";
     ?>
-   
+
+
 
 
 </div>
