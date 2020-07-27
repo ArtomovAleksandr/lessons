@@ -41,8 +41,13 @@ class GoodsorderModel extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'quantity' => 'Quantity',
+            'quantity' => 'Количество',
             'goods_id' => 'Goods ID',
+            'order_id' => '',
+            'name' => 'Наименование',
+            'mark' => 'Маркировка',
+            'catalog' => 'Коталож. номер',
+            'num' => 'Внутр. номер',
         ];
     }
 }

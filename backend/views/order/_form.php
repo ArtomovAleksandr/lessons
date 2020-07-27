@@ -12,19 +12,17 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'create_date')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'create_date')->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->textInput(['disabled' => true]) ?>
 
     <?= $form->field($model, 'fone')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'done')->textInput() ?>
+    <?= $form->field($model, 'done')->dropDownList([0 => 'не выполнен', 1 => 'выполнен']) ?>
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'countgoods')->textInput() ?>
-
-    <?= $form->field($model, 'totalorder')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'totalorder')->textInput(['disabled' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

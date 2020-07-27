@@ -48,9 +48,9 @@ class OrderModel extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'create_date' => 'Create Date',
-            'name' => 'Name',
-            'fone' => 'Fone',
+            'create_date' => 'Дата создания',
+            'name' => 'Имя',
+            'fone' => 'Телефон',
             'done' => 'Done',
             'description' => 'Description',
             'countgoods' => 'Countgoods',

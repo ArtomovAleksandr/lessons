@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\OrderModel */
 
-$this->title = 'Update Order Model: ' . $model->name;
+$this->title = 'Изменение заказа ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Order Models', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

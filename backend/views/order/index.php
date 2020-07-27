@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\SearchOrderModel */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Order Models';
+$this->title = 'Не выполненные заказы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-model-index">
@@ -15,10 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Order Model', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <p>
-        <?= Html::a('Выплненные заказы', ['notdone'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Выполненные заказы', ['notdone'], ['class' => 'btn btn-success']) ?>
     </p>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -32,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'create_date',
             'name',
             'fone',
-            'done',
+            //'done',
             //'description:ntext',
             //'countgoods',
             //'totalorder',

@@ -15,14 +15,10 @@ $this->title = 'Изменить количество товара: ' . $model->
 
     <h1><?= Html::encode($this->title) ?></h1>
      <p>
-         <?=   Html::a('Изменить', ['view', 'id' =>$model -> order_id], ['class' => 'btn btn-primary']); ?>
+         <?=   Html::a('К заказу', ['view', 'id' =>$model -> order_id], ['class' => 'btn btn-success']); ?>
      </p>
     <?= $this->render('_form_goods_update', [
         'model' => $model,
-//        'category' => ArrayHelper::map($category,'id','name'),
-//        'unit' =>  ArrayHelper::map($unit,'id','name'),
-//        'currency' =>  ArrayHelper::map($currency,'id','name'),
-//        'factory' =>  ArrayHelper::map($factory,'id','name')
     ]) ?>
 
 </div>

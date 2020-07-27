@@ -36,8 +36,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Lists all OrderModel models.
-     * @return mixed
+     * список не выполненных заказов
      */
     public function actionIndex()
     {
@@ -50,6 +49,10 @@ class OrderController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    /**
+     * список выполненных заказов
+     */
     public function actionNotdone()
     {
         $searchModel = new SearchOrderModel();
@@ -62,13 +65,10 @@ class OrderController extends Controller
         ]);
     }
     /**
-     * Displays a single OrderModel model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
+     * просмотр товра в одном заказе
      */
     public function actionView($id)
-    {
+    {   $modelorder = $this ->findOrderModel($id);
         $models =  GoodsorderModel::find()->where(['order_id' => $id])->all();
 
         if($models ===null){
@@ -94,57 +94,30 @@ class OrderController extends Controller
         return $this->render('infoorder', [
             'models' => $models,
             'total' => $total,
+            'idxmodel' => $id,
+            'done' => $modelorder ->done,
         ]);
-//        return $this->render('view', [
-//            'model' => $this->findModel($id),
+
+    }
+
+
+//    public function actionCreate()
+//    {
+//        $model = new OrderModel();
+//
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect(['view', 'id' => $model->id]);
+//        }
+//
+//        return $this->render('create', [
+//            'model' => $model,
 //        ]);
-    }
+//    }
 
-    /**
-     * Creates a new OrderModel model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new OrderModel();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing OrderModel model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionUpdate($id)
     {
-//        $models =   GoodsorderModel::find()->where(['order_id' => $id])->all();
-////        $total = 0;
-////        foreach ($models as &$model){
-////            $obj = GoodsModel::find()->andFilterWhere(['id'=>$model ->goods_id])->one();
-////            $model ->num = $obj ->num;
-////            $model ->catalog = $obj ->catalog;
-////            $model ->mark = $obj ->mark;
-////            $model ->name = $obj ->name;
-////            $model ->price = $obj ->getCauntPrice();
-////            $count = $model ->quantity;
-////            $model ->sum = ($model ->price) * $count;
-////            $total += $model->sum;
-////        }
-////
-////        return $this->render('infoorder', [
-////            'models' => $models,
-////            'total' => $total,
-////        ]);
+
           $model = $this->findOrderModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -155,13 +128,14 @@ class OrderController extends Controller
             'model' => $model,
         ]);
     }
-
+    /**
+     *  изменить количество товара в заказе
+     */
     public function actionUpdategoods($id){
 
         $model = $this -> findGoodsOrderModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-       //     return $this->redirect(['index']);
            return $this->redirect(['view', 'id' => $model -> order_id]);
         }
 
@@ -187,25 +161,40 @@ class OrderController extends Controller
             'model' => $model,
         ]);
     }
+    /**
+     * удалить заказ
+     */
     public function actionDelete($id)
     {
         $this->findOrderModel($id)->delete();
 
         return $this->redirect(['index']);
     }
+    /**
+     * удалить товар в заказе
+     * если товар остался последним, то удаляем веь заказ
+     */
+
     public function actionDeletegoods($id)
     {
-        $this->findGoodsOrderModel($id)->delete();
+        $model =   $this->findGoodsOrderModel($id);
 
-        return $this->redirect(['index']);
+        $count = GoodsOrderModel::find()->where(['order_id' => $model ->order_id])->count();
+
+        if($count <=1){
+            $this ->findOrderModel($model ->order_id) ->delete();
+
+            return $this->redirect(['index']);
+        }else{
+            $model ->delete();
+
+            return  $this->redirect(['view', 'id' => $model -> order_id]);
+        }
+
     }
 
     /**
-     * Finds the OrderModel model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return OrderModel the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+     * поиск моделей
      */
     protected function findGoodsOrderModel($id)
     {
@@ -215,6 +204,7 @@ class OrderController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
     protected function findOrderModel($id)
     {
         if (($model = OrderModel::findOne($id)) !== null) {

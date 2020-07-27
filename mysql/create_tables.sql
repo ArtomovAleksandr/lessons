@@ -106,9 +106,9 @@ id int primary key auto_increment,  -- первичній ключ
 create_date varchar(50) not null,  -- время создания
 name varchar(255) default '',     -- имя 
 fone varchar(255) not null,   -- телефон
-done boolean default false,   -- отметка віполнения 
+done boolean default false,   -- отметка выполнении 
 description text default '',  -- поясненмя
-countgoods int default 0,  -- количество товара
+countgoods int default 0,  -- количество товара (убрать)
 totalorder varchar(255)   -- сумма товара
 )engine=innoDB;
 
@@ -129,11 +129,14 @@ constraint fk_goodsid_goodsorder
         on delete cascade
 )engine=innoDB;
 
- select * from `order`;
+select * from `order`;
+select * from `goods`;
+select * from `goodsorder`;
 -- update `goods` set metric_order=40 where id = 4;
 -- alter table `goods` add path_image  varchar(255) default null;
 --  select * from `order`;
- drop table `order`;
-delete from `order` where id = 1;
-insert into `order` (create_date,name,fone,totalorder) value('2020','vasa','0675647832','200.45');
+-- drop table `order`;
+ delete from `order` where id = 1;
+ insert into `order` (create_date,name,fone,totalorder) value('2020','vasa','0675647832','200.45');
+insert into `goodsorder`(quantity,order_id,goods_id) values(5,1,5),(4,2,4);
 
