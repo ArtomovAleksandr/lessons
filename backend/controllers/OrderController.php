@@ -11,6 +11,7 @@ use common\models\SearchOrderModel;
 use common\models\GoodsorderModel;
 use common\models\GoodsModel;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -26,6 +27,16 @@ class OrderController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => [ 'index','notdone','view','update','updategoods','delete','deletegoods'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -42,7 +53,7 @@ class OrderController extends Controller
     {
         $searchModel = new SearchOrderModel();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider ->query->andWhere(['done'=>false]);
+        $dataProvider ->query->andWhere(['done'=>false])-> orderBy(['id' => SORT_DESC]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -57,7 +68,7 @@ class OrderController extends Controller
     {
         $searchModel = new SearchOrderModel();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider ->query->andWhere(['done'=>true]);
+        $dataProvider ->query->andWhere(['done'=>true])->orderBy(['id' => SORT_DESC]);
 
         return $this->render('notdone', [
             'searchModel' => $searchModel,
@@ -99,21 +110,6 @@ class OrderController extends Controller
         ]);
 
     }
-
-
-//    public function actionCreate()
-//    {
-//        $model = new OrderModel();
-//
-//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['view', 'id' => $model->id]);
-//        }
-//
-//        return $this->render('create', [
-//            'model' => $model,
-//        ]);
-//    }
-
 
     public function actionUpdate($id)
     {

@@ -42,10 +42,10 @@ class CategoryModel extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'is_visible' => 'Is Visible',
-            'metric_order' => 'Metric Order',
-            'path_image' => 'Path Image',
+            'name' => 'Наименование',
+            'is_visible' => 'Видимая',
+            'metric_order' => 'Сортировка',
+            'path_image' => 'Картинка',
         ];
     }
 }

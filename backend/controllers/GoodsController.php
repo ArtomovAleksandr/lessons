@@ -30,7 +30,7 @@ class GoodsController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['view', 'index','update','archive','create','delete'],
+                        'actions' => ['index','archive','view','create','update','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

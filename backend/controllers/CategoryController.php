@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\CategoryModel;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -14,12 +15,20 @@ use yii\filters\VerbFilter;
  */
 class CategoryController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
+
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index','notvisible','view','create','update','delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -35,11 +44,22 @@ class CategoryController extends Controller
      */
     public function actionIndex()
     {
+    $dataProvider = new ActiveDataProvider([
+        'query' => CategoryModel::find()->where(['is_visible' => true])->orderBy('metric_order')
+      ]);
+   // ->orderBy('metric_order')
+    return $this->render('index', [
+        'dataProvider' => $dataProvider,
+       ]);
+    }
+
+    public function actionNotvisible()
+    {
         $dataProvider = new ActiveDataProvider([
-            'query' => CategoryModel::find()->orderBy('metric_order')
+            'query' => CategoryModel::find()->where(['is_visible' => false])->orderBy('metric_order')
         ]);
 
-        return $this->render('index', [
+        return $this->render('indexnotvisible', [
             'dataProvider' => $dataProvider,
         ]);
     }

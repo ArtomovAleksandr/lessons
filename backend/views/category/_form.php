@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'is_visible')->textInput() ?>
+    <?= $form->field($model, 'is_visible')->dropDownList([0 => 'не видимая категория', 1 => 'видимая категория']) ?>
 
     <?= $form->field($model, 'metric_order')->textInput() ?>
 

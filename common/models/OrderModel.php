@@ -34,8 +34,9 @@ class OrderModel extends \yii\db\ActiveRecord
     {
         return [
             [['create_date', 'fone'], 'required'],
+            [['done'], 'integer'],
             [['done', 'countgoods'], 'integer'],
-            [['description'], 'string'],
+      //      [['description'], 'string'],
             [['create_date'], 'string', 'max' => 50],
             [['name', 'fone', 'totalorder'], 'string', 'max' => 255],
         ];

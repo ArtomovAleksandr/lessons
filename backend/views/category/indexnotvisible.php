@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Видимые Категории';
+$this->title = 'Невидимые Категории';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="category-model-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Создать Категорию', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <p>
-        <?= Html::a('Невидимые категории', ['notvisible'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Bидимые категории', ['index'], ['class' => 'btn btn-primary']) ?>
     </p>
 
 
