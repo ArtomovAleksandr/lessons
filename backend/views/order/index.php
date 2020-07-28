@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Выполненные заказы', ['notdone'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

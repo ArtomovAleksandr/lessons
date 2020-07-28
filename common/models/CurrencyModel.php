@@ -40,9 +40,9 @@ class CurrencyModel extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'shortname' => 'Shortname',
-            'rate' => 'Rate',
+            'name' => 'Наименование',
+            'shortname' => 'Короткое наим.',
+            'rate' => 'Котировка',
         ];
     }
 }

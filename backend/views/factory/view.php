@@ -7,13 +7,13 @@ use yii\widgets\DetailView;
 /* @var $model common\models\FactoryModel */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Factory Models', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Производитель', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="factory-model-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= 'Производитель - '. Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>

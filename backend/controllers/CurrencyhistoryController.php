@@ -47,7 +47,7 @@ class CurrencyhistoryController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => CurrencyHistoryModel::find(),
+            'query' => CurrencyHistoryModel::find() ->orderBy(['id' => SORT_DESC])
         ]);
 
         return $this->render('index', [
@@ -55,64 +55,7 @@ class CurrencyhistoryController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single CurrencyHistoryModel model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-//    public function actionView($id)
-//    {
-//        return $this->render('view', [
-//            'model' => $this->findModel($id),
-//        ]);
-//    }
 
-    /**
-     * Creates a new CurrencyHistoryModel model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-//    public function actionCreate()
-//    {
-//        $model = new CurrencyHistoryModel();
-//
-//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['view', 'id' => $model->id]);
-//        }
-//
-//        return $this->render('create', [
-//            'model' => $model,
-//        ]);
-//    }
-
-    /**
-     * Updates an existing CurrencyHistoryModel model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-//    public function actionUpdate($id)
-//    {
-//        $model = $this->findModel($id);
-//
-//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['view', 'id' => $model->id]);
-//        }
-//
-//        return $this->render('update', [
-//            'model' => $model,
-//        ]);
-//    }
-
-    /**
-     * Deletes an existing CurrencyHistoryModel model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -120,13 +63,7 @@ class CurrencyhistoryController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the CurrencyHistoryModel model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return CurrencyHistoryModel the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     protected function findModel($id)
     {
         if (($model = CurrencyHistoryModel::findOne($id)) !== null) {

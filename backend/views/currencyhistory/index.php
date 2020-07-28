@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Currency History Models';
+$this->title = 'История Валюты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="currency-history-model-index">

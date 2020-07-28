@@ -110,7 +110,9 @@ class OrderController extends Controller
         ]);
 
     }
-
+    /**
+     * изменить статус заказа
+     */
     public function actionUpdate($id)
     {
 

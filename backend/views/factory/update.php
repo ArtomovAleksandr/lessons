@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\FactoryModel */
 
-$this->title = 'Update Factory Model: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Factory Models', 'url' => ['index']];
+$this->title = 'Изменить производителя - ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Производитель', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Изменить';
 ?>
 <div class="factory-model-update">
 

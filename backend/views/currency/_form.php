@@ -12,9 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->textInput(['disabled' => true]) ?>
 
-    <?= $form->field($model, 'shortname')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'shortname')->textInput(['disabled' => true]) ?>
 
     <?= $form->field($model, 'rate')->textInput(['maxlength' => true]) ?>
 

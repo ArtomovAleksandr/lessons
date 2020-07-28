@@ -40,9 +40,9 @@ class CurrencyHistoryModel extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'date_setting' => 'Date Setting',
-            'rate' => 'Rate',
+            'name' => 'Наименование',
+            'date_setting' => 'Дата изменения',
+            'rate' => 'Котировка',
         ];
     }
 }

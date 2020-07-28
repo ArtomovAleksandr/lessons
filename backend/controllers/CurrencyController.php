@@ -41,10 +41,7 @@ class CurrencyController extends Controller
         ];
     }
 
-    /**
-     * Lists all CurrencyModel models.
-     * @return mixed
-     */
+
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
@@ -56,12 +53,7 @@ class CurrencyController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single CurrencyModel model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     public function actionView($id)
     {
         return $this->render('view', [
@@ -69,32 +61,8 @@ class CurrencyController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new CurrencyModel model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new CurrencyModel();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing CurrencyModel model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -120,13 +88,7 @@ class CurrencyController extends Controller
         }
     }
 
-    /**
-     * Deletes an existing CurrencyModel model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -134,13 +96,7 @@ class CurrencyController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the CurrencyModel model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return CurrencyModel the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     protected function findModel($id)
     {
         if (($model = CurrencyModel::findOne($id)) !== null) {
