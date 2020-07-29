@@ -34,7 +34,7 @@ AppAssetMainFront::register($this);
         <div class="col text-center">
             <a href="#" style="pointer-events: none">
                 <i class="fa fa-phone"></i>
-                <span class="d-none d-inline style-fa">+038 067 564-66-42</span>
+                <span class="d-none d-inline style-fa">+038 050 687-45-18</span>
             </a>
 
             <a href="/basket">
@@ -53,31 +53,31 @@ AppAssetMainFront::register($this);
         <div class="col" id="repead-images">
         </div>
     </div>
-    <nav id="menu" class="navbar navbar-expand-lg navbar-light mt-2">
-        <a class="navbar-brand color_white" href="#">Меню</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto color_white">
-                <li class="nav-item">
-                    <a class="nav-link color_white_hover" href="#">Отзывы</a>
-                                   </li>
-                <li class="nav-item">
-                    <a class="nav-link color_white_hover" href="#">Доставка</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color_white_hover" href="#">Контакты</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link color_white_hover" href="#">О сервисе</a>
-                </li>
-
-            </ul>
-
-        </div>
-    </nav>
+<!--    <nav id="menu" class="navbar navbar-expand-lg navbar-light mt-2">-->
+<!--        <a class="navbar-brand color_white" href="#">Меню</a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!---->
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav mr-auto color_white">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link color_white_hover" href="#">Отзывы</a>-->
+<!--                                   </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link color_white_hover" href="#">Доставка</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link color_white_hover" href="#">Контакты</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link color_white_hover" href="#">О сервисе</a>-->
+<!--                </li>-->
+<!---->
+<!--            </ul>-->
+<!---->
+<!--        </div>-->
+<!--    </nav>-->
 </div>
 
 <?= $content ?>

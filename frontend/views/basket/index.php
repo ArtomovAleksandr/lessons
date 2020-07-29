@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </button>
                 </div>
             </div>
-<!--            --><?php // Pjax::begin();        ?>
+            <?php  Pjax::begin();        ?>
             <?php $form=ActiveForm::begin() ?>
             <div class="conteiner-product">
 
@@ -111,7 +111,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::submitButton('Оформить заказ', ['id' => 'create-order']) ?>
             </div>
             <?php ActiveForm::end() ?>
-<!--            --><?php //Pjax::end() ?>
+            <?php Pjax::end() ?>
         </div>
 
     </div>
@@ -119,10 +119,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     $this->registerCssFile('@web/css/stylebasket.css');
     $this->registerJsFile('@web/js/dto/template_function_basket.js');
-    $this->registerJsFile('@web/js/servise/AJAXService.js',['depends'=>
-        'yii\web\YiiAsset',
-        'yii\bootstrap4\BootstrapAsset',
-    ]);
+//    $this->registerJsFile('@web/js/servise/AJAXService.js',['depends'=>
+//        'yii\web\YiiAsset',
+//        'yii\bootstrap4\BootstrapAsset',
+//    ]);
     $this->registerJsFile('@web/js/user_basket.js',['depends'=>
         'yii\web\YiiAsset',
         'yii\bootstrap4\BootstrapAsset',
