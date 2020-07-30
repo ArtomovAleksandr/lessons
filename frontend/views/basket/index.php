@@ -33,17 +33,32 @@ $script_send = <<< JS
       let storage=readStorage(namestorage);
      
       let data = createNewArray(storage.goods);
+      let fone=  $('.client-fone-data input').val();
+      fone =isFoneValidate(fone);
+      if(fone ===null){
+          alert('неверно введен номер телефона')
+          return;
+      }
+      let name=$('.client-name-data input').val();
+      name = isNameValidate(name)
+      if(name ===null){
+          alert('неверно введенo имя' ) 
+           return;
+      }
      $.ajax({
       
        url:'/goodsorder',
        data:{
-           name:'saja',
-           fone:'456-4893',
+           name:name,
+           fone:fone,
            goods:data,
            },
        type:'POST',
        success:function(res) {
-         console.log('success'+res);
+        
+             removeStorage(namestorage);
+             location.replace("/");
+     
        },
        error:function() {
          console.log('error');

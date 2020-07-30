@@ -1,5 +1,5 @@
 $(function () {
-     var namestorage = 'basketstorage';
+    const namestorage = 'basketstorage';
     class Storage {
         constructor(id,quantity){
             this.id=id;
@@ -26,37 +26,21 @@ $(function () {
     }
 
     $('.client-fone-data input').bind('input',function (e) {
-        let value=e.target.value;
-        value = value.replace(/[\s\-\(\)]/g, '');
-        console.log('value = '+value);
-      //  if(value.length>5){
-       let str =value.match(/^(\+)?(\d{1,15})?$/);
-        console.log('str = '+str);
-           if(str===null){
+       let value =isFoneValidate(e.target.value);
+           if(value ===null){
                $(this).css('color','red');
             }else {
                $(this).css('color','green');
            }
-      //  }else{
-       //     $(this).css('color','black');
-    //    }
-
-       //console.log(e.target.value);
     });
     $('.info-client-name input').bind('input',function (e) {
-        let value=e.target.value;
-   //    console.log('client input ='+value);
-        if((value.length>3)&&!(value.match(/[><;]+/))){
-          //  if(value.match(/[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}/)==null){
+
+        let str = isNameValidate(e.target.value)
+        if(str !==null){
                 $(this).css('color','green');
             }else{
                 $(this).css('color','red');
             }
-        // }else{
-        //     $(this).css('color','black');
-        // }
-
-
     });
 
  //  $('#create-order').click(function (e) {

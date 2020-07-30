@@ -96,7 +96,7 @@ function deleteItemToLocalStorage(id,namestorage){
     return false;
 }
 
-
+//показывает над корзиной красный кружок  с количеством пзиций
 function readStorageForBasketShow(namestorage)
 {
     let item = readStorage(namestorage);
@@ -108,8 +108,9 @@ function readStorageForBasketShow(namestorage)
         $('#goods-basket').addClass('display-off');
     }
 }
+//проверка полного времени
 function checkFullTime(namestorage,fulltimestorage) {
-    if(ishaveStorage(namestorage)==true){
+  //  if(ishaveStorage(namestorage)==true){
         let storage=readStorage(namestorage);
 
         if(storage!=false) {
@@ -123,5 +124,22 @@ function checkFullTime(namestorage,fulltimestorage) {
                 removeStorage(namestorage);
             }
         }
-     }
+  //   }
+}
+function isFoneValidate(fone) {
+    let foneout = fone.replace(/[\s\-\(\)]/g, '');
+    let str =foneout.match(/^(\+)?(\d{6,15})?$/);
+    if(str ===null){
+        return null;
+    }else{
+        return str[0];
+    }
+}
+function isNameValidate(value) {
+    if((value.length>3)&&(value.length<20)&&!(value.match(/[><;]+/))) {
+        return value;
+    }else {
+        return null;
+    }
+
 }
