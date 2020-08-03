@@ -5,6 +5,17 @@ function ishaveStorage(namestorage) {
     console.log('нет такого -'+namestorage);
     return false;
 }
+class DTOGoodsStorage{
+    constructor(id,name,factory,catalog,unit,price,quantity){
+      this.id = id;
+        this.name=name;
+        this.factory=factory;
+        this.catalog=catalog;
+        this.unit=unit;
+        this.price =price;
+        this.quantity=quantity;
+    }
+}
 function readStorage(namestorage) {
     if (ishaveStorage(namestorage)) {
         return JSON.parse(localStorage.getItem(namestorage));

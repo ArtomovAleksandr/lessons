@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\BgoodsModel;
 use common\models\CategoryModel;
 use common\models\CurrencyModel;
 use common\models\FactoryModel;
@@ -30,7 +31,7 @@ class GoodsController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index','archive','view','create','update','delete'],
+                        'actions' => ['index','archive','view','create','update','delete','copy'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -66,7 +67,12 @@ class GoodsController extends Controller
             'arrCategory' => ArrayHelper::map($category,'id','name')
         ]);
     }
-
+    public function actionCopy(){
+        $models = BgoodsModel::find()->all();
+        return $this->render('copy',[
+            'models'=>$models,
+        ]);
+    }
     public function actionArchive()
     {
         $searchModel = new GoodsSearchModel();

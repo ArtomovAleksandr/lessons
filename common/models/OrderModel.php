@@ -35,10 +35,9 @@ class OrderModel extends \yii\db\ActiveRecord
         return [
             [['create_date', 'fone'], 'required'],
             [['done'], 'integer'],
-            [['done', 'countgoods'], 'integer'],
-      //      [['description'], 'string'],
+            [['description'], 'string'],
             [['create_date'], 'string', 'max' => 50],
-            [['name', 'fone', 'totalorder'], 'string', 'max' => 255],
+            [['name', 'fone'], 'string', 'max' => 255],
         ];
     }
 
@@ -52,10 +51,9 @@ class OrderModel extends \yii\db\ActiveRecord
             'create_date' => 'Дата создания',
             'name' => 'Имя',
             'fone' => 'Телефон',
-            'done' => 'Done',
-            'description' => 'Description',
-            'countgoods' => 'Countgoods',
-            'totalorder' => 'Totalorder',
+            'done' => 'Отметка о выполнении',
+            'description' => 'Примечания',
+
         ];
     }
 

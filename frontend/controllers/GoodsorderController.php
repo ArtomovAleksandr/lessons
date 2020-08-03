@@ -71,9 +71,9 @@ class GoodsorderController extends Controller
             try {
                 $db ->createCommand()->insert('order',['name'=>$name,
                     'fone'=>$fone,
-                    'create_date' => $date,
-                    'countgoods' => $countgoods,
-                    'totalorder' => $totalorder])->execute();
+                    'create_date' => $date])->execute();
+                //    'countgoods' => $countgoods,
+               //     'totalorder' => $totalorder])->execute();
                 $order_id = $db ->getLastInsertID();
                 $array=[];
                 for($i = 0; $i < $countgoods;$i++)

@@ -17,8 +17,8 @@ class SearchOrderModel extends OrderModel
     public function rules()
     {
         return [
-            [['id', 'done', 'countgoods'], 'integer'],
-            [['create_date', 'name', 'fone', 'description', 'totalorder'], 'safe'],
+            [['id', 'done'], 'integer'],
+            [['create_date', 'name', 'fone', 'description'], 'safe'],
         ];
     }
 
@@ -60,14 +60,14 @@ class SearchOrderModel extends OrderModel
         $query->andFilterWhere([
             'id' => $this->id,
             'done' => $this->done,
-            'countgoods' => $this->countgoods,
+      //     'countgoods' => $this->countgoods,
         ]);
 
         $query->andFilterWhere(['like', 'create_date', $this->create_date])
             ->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'fone', $this->fone])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'totalorder', $this->totalorder]);
+            ->andFilterWhere(['like', 'description', $this->description]);
+       //     ->andFilterWhere(['like', 'totalorder', $this->totalorder]);
 
         return $dataProvider;
     }
