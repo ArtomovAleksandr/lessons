@@ -63,7 +63,7 @@ id int primary key auto_increment,
 num varchar(50), -- кассовый номер
 catalog varchar(50), -- каталожный номер
 mark varchar(100), -- маркировка
-name varchar(100) not null, -- название
+name varchar(255) not null, -- название
 unit_id int, -- еденица измерения
  constraint fk_unitid_goods
    foreign key(unit_id)
@@ -95,7 +95,7 @@ addition varchar(25) default '75', -- наценка в %
 countprice boolean default true, -- вычисляемая цена
 archive boolean default false, -- в архиве
 metric_order int default 25, -- порядок в категории
-outprice varchar(25) default 0, -- выходная цена
+outprice varchar(25) default '0', -- выходная цена
 max_order int default 6, -- максимальное количество в заказе
 path_image  varchar(255) default null -- путь к рисунку
 
@@ -175,11 +175,12 @@ INSERT INTO `bgoods` VALUES (1,3,4,7,2,3,1,'001','1 423 002 080','ось рег�
 
 select * from `order`;
 select * from `user`;
-select * from `goods`;
+select count(*) from `bgoods`;
 select * from `goodsorder`;
--- drop table `goodsorder`;
+select * from `currency`;
+-- drop table `goods`;
 -- drop table  `order`;
--- update `goods` set metric_order=40 where id = 4;
+ -- update `bgoods` set prodid =42 where id = 7;
 -- alter table `goods` add path_image  varchar(255) default null;
 --  select * from `order`;
 -- drop table `order`;

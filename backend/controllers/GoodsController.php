@@ -31,7 +31,7 @@ class GoodsController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index','archive','view','create','update','delete','copy'],
+                        'actions' => ['index','archive','view','create','update','delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -67,12 +67,7 @@ class GoodsController extends Controller
             'arrCategory' => ArrayHelper::map($category,'id','name')
         ]);
     }
-    public function actionCopy(){
-        $models = BgoodsModel::find()->all();
-        return $this->render('copy',[
-            'models'=>$models,
-        ]);
-    }
+
     public function actionArchive()
     {
         $searchModel = new GoodsSearchModel();
@@ -167,13 +162,47 @@ class GoodsController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the GoodsModel model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return GoodsModel the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    public function actionCopy(){
+        $Bmodelss = BgoodsModel::find()->all();
+        foreach ($Bmodelss as &$Bmodels) {
+
+
+            $unit = $Bmodels->unit;
+            if ($unit == 'шт.') {
+                $unit = 1;
+            } elseif ($unit == 'см.') {
+                $unit = 3;
+            } else {
+                $unit = 2;
+            }
+
+            //   $model ->outprice ='67.5'; // (string)((float) ($Bmodels -> pr)*1.5);
+            $ex = "exeption null";
+       try{
+           Yii::$app->db->createCommand()->insert('goods', [
+               'id' => $Bmodels ->id,
+               'name' => $Bmodels ->name,
+               'num' =>  $Bmodels -> num,
+               'catalog' => $Bmodels -> katalog,
+               'mark' => $Bmodels -> mark,
+               'unit_id' => $unit,
+               'currency_id' => $Bmodels ->curid,
+               'factory_id' => $Bmodels -> prodid,
+               'category_id' =>$Bmodels -> catid,
+               'inprice' => $Bmodels -> pr,
+           ])->execute();
+
+        } catch(\Exception $e) {
+            $ex =$e;
+           // throw $e;
+       }
+        }
+        return $this->render('copy',[
+            'models'=>$Bmodels,
+            'ex' => $ex,
+            "unit" => $unit,
+        ]);
+    }
     protected function findModel($id)
     {
         if (($model = GoodsModel::findOne($id)) !== null) {

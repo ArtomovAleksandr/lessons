@@ -24,8 +24,13 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+        //    'enableStrictParsing'   => false,
+
             'rules' => [
-                '/' => 'goods/index'
+                '/' => 'goods/index',
+           //     'goods/<id:\d+>' => 'goods/index',
+            //    http://frontend/goods?id=11
+            //    '/goods/<\d+>' => '/goods?id=<\d+>'
             ],
             // ...
         ],
@@ -45,14 +50,9 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
+
+
+
     ],
     'params' => $params,
 ];

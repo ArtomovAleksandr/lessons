@@ -23,6 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php
     var_dump($models);
+    var_dump($ex);
+    var_dump($unit);
 
     ?>
 

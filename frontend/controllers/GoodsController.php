@@ -49,14 +49,10 @@ class GoodsController extends Controller
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
 
         return $this->render('index', [
             'models' => $models,
             'pages' => $pages,
-       //     'dataProvider' => $dataProvider,
             'category' => $category,
             'factorys' => ArrayHelper::map($factory,'id','name'),
             'units' => ArrayHelper::map($unit,'id','name'),
