@@ -164,6 +164,7 @@ class GoodsController extends Controller
 
     public function actionCopy(){
         $Bmodelss = BgoodsModel::find()->all();
+        $ex = "exeption null";
         foreach ($Bmodelss as &$Bmodels) {
 
 
@@ -175,15 +176,18 @@ class GoodsController extends Controller
             } else {
                 $unit = 2;
             }
+            $catalog =$Bmodels -> katalog;
+            $catalog= preg_replace("/\s+/", "", $catalog);
+            $catalog= preg_replace("/-+/", "", $catalog);
 
             //   $model ->outprice ='67.5'; // (string)((float) ($Bmodels -> pr)*1.5);
-            $ex = "exeption null";
+
        try{
            Yii::$app->db->createCommand()->insert('goods', [
                'id' => $Bmodels ->id,
                'name' => $Bmodels ->name,
                'num' =>  $Bmodels -> num,
-               'catalog' => $Bmodels -> katalog,
+               'catalog' => $catalog,
                'mark' => $Bmodels -> mark,
                'unit_id' => $unit,
                'currency_id' => $Bmodels ->curid,
@@ -192,11 +196,14 @@ class GoodsController extends Controller
                'inprice' => $Bmodels -> pr,
            ])->execute();
 
-        } catch(\Exception $e) {
+          } catch(\Exception $e) {
             $ex =$e;
-           // throw $e;
-       }
+
+          }
         }
+
+
+
         return $this->render('copy',[
             'models'=>$Bmodels,
             'ex' => $ex,

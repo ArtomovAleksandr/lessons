@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?php
-    var_dump($models);
+   // var_dump($models);
     var_dump($ex);
     var_dump($unit);
 

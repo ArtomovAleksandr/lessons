@@ -17,13 +17,12 @@ $this->title = 'ВСЕ КАТЕГОРИИ ТОВАРА';
 
     <h3><?= Html::encode($this->title) ?></h3>
     <div class="row mb-2">
-<!--    <p>-->
 
-<!--    </p>-->
+
+
     <?php foreach ($models as $model): ?>
         <div class="product col-lg-3 col-md-3 col-sm-6">
             <a href="/goods?id=<?= $model->id ?>">
-<!--            <a href="frontend/gategorygoods">-->
                 <div class="product-border">
                     <div class="product-show">
                         <div class="image">
@@ -42,11 +41,39 @@ $this->title = 'ВСЕ КАТЕГОРИИ ТОВАРА';
 
     <?php endforeach; ?>
     </div>
-    <?php
-    // display pagination
-    echo LinkPager::widget([
-        'pagination' => $pages,
 
+    <?php
+
+   echo  LinkPager::widget([
+        'pagination' => $pages,
+        'hideOnSinglePage' => true,
+        'prevPageLabel' => '&laquo; назад',
+        'nextPageLabel' => 'далее &raquo;',
+        'disableCurrentPageButton' =>true,
+        'maxButtonCount' =>0,
+        // Настройки контейнера пагинации
+        'options' => [
+            'tag' => 'ul',
+            'class' => 'pagination  justify-content-center',
+            'id' => 'pager-container',
+        ],
+
+        // Настройки классов css для ссылок
+        'linkOptions' => ['class' => 'page-link'],
+        'activePageCssClass' => 'page-item',
+        'disabledPageCssClass' => 'disabled',
+        'disabledListItemSubTagOptions' => ['tag' => 'a', 'class' => 'page-link'],
+        // Настройки для навигационных ссылок
+
+        'prevPageCssClass' => 'page-item',
+        'nextPageCssClass' => 'page-item',
+    ]);
+    ?>
+    <?php
+    $this->registerJsFile('@web/js/dto/template_function_basket.js');
+    $this->registerJsFile('@web/js/goods_category.js',['depends'=>
+        'yii\web\YiiAsset',
+        'yii\bootstrap4\BootstrapAsset',
     ]);
     ?>
 

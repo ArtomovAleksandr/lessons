@@ -1,7 +1,7 @@
 ﻿$(function () {
     const digital=2;
     const namestorage='basketstorage';
-    const fulltimestorage = 300; // минуты (время после которого корзина удаляется)
+    const fulltimestorage = 1500; // минуты (время после которого корзина удаляется)
     $( ".order button").click(function() {
         $(this).parents('.capture-order').css('display','none');
         $(this).parents('.product-border').children('.basket-show').css('display', 'flex');

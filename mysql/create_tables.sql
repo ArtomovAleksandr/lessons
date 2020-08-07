@@ -175,10 +175,10 @@ INSERT INTO `bgoods` VALUES (1,3,4,7,2,3,1,'001','1 423 002 080','ось рег�
 
 select * from `order`;
 select * from `user`;
-select count(*) from `bgoods`;
+select * from `goods`;
 select * from `goodsorder`;
 select * from `currency`;
--- drop table `goods`;
+drop table `goods`;
 -- drop table  `order`;
  -- update `bgoods` set prodid =42 where id = 7;
 -- alter table `goods` add path_image  varchar(255) default null;
