@@ -24,14 +24,7 @@ return [
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-                '/' => 'category/index'
-            ],
-            // ...
-        ],
+
         'session' => [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
@@ -49,12 +42,15 @@ return [
             'errorAction' => 'site/error',
         ],
 
-//        'urlManager' => [
-//            'enablePrettyUrl' => true,
-//            'showScriptName' => false,
-//            'rules' => [
-//            ],
-//        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                '/' => 'category/',
+                'goods/<id:\d+>' => 'goods',
+                'page/<page:\d+>' => 'goods/index',
+            ],
+        ],
 
     ],
     'params' => $params,

@@ -49,7 +49,11 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="capture-unit">
                                 <div class="capture-descript">Еденица измер.</div>
                                 <?php $unitid = $model->unit_id ?>
-                                <div class="capture-name"><?= $units[$unitid]?></div>
+                                <?php if($model -> max_order >0 ){?>
+                                   <div class="capture-name"><?= $units[$unitid].'   в наличии'?></div>
+                               <?php }else{ ?>
+                                <div class="capture-name"><?= $units[$unitid].'   под заказ'?></div>
+                                <?php  } ?>
                             </div>
                             <div class="capture-price">
                                 <div class="capture-descript-price">Цена</div>

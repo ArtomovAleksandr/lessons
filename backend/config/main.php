@@ -15,6 +15,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
+
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -28,9 +29,7 @@ return [
 
             'rules' => [
                 '/' => 'goods/index',
-           //     'goods/<id:\d+>' => 'goods/index',
-            //    http://frontend/goods?id=11
-            //    '/goods/<\d+>' => '/goods?id=<\d+>'
+
             ],
             // ...
         ],

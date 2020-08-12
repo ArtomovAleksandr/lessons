@@ -1,14 +1,16 @@
-Options +FollowSymLinks
-IndexIgnore */*
-RewriteEngine On
+<IfModule mod_rewrite.c>
+        Options +FollowSymlinks
 
-RewriteCond %{REQUEST_URI} !^/(web)
-RewriteRule ^assets/(.*)$ /web/assets/$1 [L]
-RewriteRule ^css/(.*)$ web/css/$1 [L]
-RewriteRule ^js/(.*)$ web/js/$1 [L]
-RewriteRule ^images/(.*)$ web/images/$1 [L]
-RewriteRule (.*) /web/$1
+        # Включаем mod_rewrite и перенаправляем со слэша
+        RewriteEngine On
+        RewriteBase /
+        RewriteCond %{HTTP_HOST} (.*)
+        RewriteCond %{REQUEST_URI} /$ [NC]
+        RewriteRule ^(.*)(/)$ $1 [L,R=301]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /web/index.php
+        # Если это папка или файл, открываем ее/его
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        # В противном случае перенаправляем на index.php
+        RewriteRule . index.php
+</IfModule>

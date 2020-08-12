@@ -18,17 +18,17 @@ class CategoryController extends Controller
     /**
      * {@inheritdoc}
      */
-//    public function behaviors()
-//    {
-//        return [
-//            'verbs' => [
-//                'class' => VerbFilter::className(),
-//                'actions' => [
-//                    'delete' => ['POST'],
-//                ],
-//            ],
-//        ];
-//    }
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
 
     /**
      * Lists all CategoryModel models.
@@ -38,7 +38,9 @@ class CategoryController extends Controller
     {
         $query = CategoryModel::find()->where(['is_visible' => true])->orderBy('metric_order');
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize' => 10]);
+        $pages = new Pagination(['totalCount' => $countQuery->count(),'defaultPageSize' => 8,
+            'forcePageParam' => false,
+            'pageSizeParam' => false]);
 
         $models = $query->offset($pages->offset)
             ->limit($pages->limit)
@@ -47,52 +49,9 @@ class CategoryController extends Controller
         return $this->render('index', [
             'models' => $models,
             'pages' => $pages,
-         //   'dataProvider' => $dataProvider,
         ]);
     }
 
-    /**
-     * Displays a single CategoryModel model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-//    public function actionView($id)
-//    {
-//        return $this->render('view', [
-//            'model' => $this->findModel($id),
-//        ]);
-//    }
 
-    /**
-     * Creates a new CategoryModel model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-
-
-    /**
-     * Updates an existing CategoryModel model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-
-    /**
-     * Deletes an existing CategoryModel model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-
-    /**
-     * Finds the CategoryModel model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return CategoryModel the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
 
 }

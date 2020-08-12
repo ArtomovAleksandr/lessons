@@ -4,6 +4,7 @@
 // use app\components\BootstrapLinkPager;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 use yii\widgets\LinkPager;
 ?>
 <div class="container mt-3">
@@ -22,7 +23,7 @@ $this->title = 'ВСЕ КАТЕГОРИИ ТОВАРА';
 
     <?php foreach ($models as $model): ?>
         <div class="product col-lg-3 col-md-3 col-sm-6">
-            <a href="/goods?id=<?= $model->id ?>">
+            <a href="<?=  Url::to(['/goods', 'id' => $model->id ])?>">
                 <div class="product-border">
                     <div class="product-show">
                         <div class="image">
