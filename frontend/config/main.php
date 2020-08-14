@@ -13,10 +13,7 @@ return [
     'layout'=>'main_front',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'telegram' => [
-            'class' => 'aki\telegram\base',
-            'botToken' => '1312256292:AAHy188W8IQ0XPimzU2kQhjca2r9NrQ2h9I' ,
-            ],
+
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'parsers' => [
