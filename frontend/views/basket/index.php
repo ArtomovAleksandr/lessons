@@ -57,7 +57,7 @@ $script_send = <<< JS
        success:function(res) {
         
              removeStorage(namestorage);
-             location.replace("/");
+             location.replace("/goodsorder/message");
      
        },
        error:function() {
