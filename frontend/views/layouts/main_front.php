@@ -48,7 +48,7 @@ AppAssetMainFront::register($this);
     </div>
     <div class="row mt-2 mr-1 ml-1" id="logo">
         <div style="width: 181px">
-            <img src="../images/resourses/logo2.png" alt="diselexpert.com.ua">
+            <img src="images/resourses/logo2.png" alt="diselexpert.com.ua">
         </div>
         <div class="col" id="repead-images">
         </div>

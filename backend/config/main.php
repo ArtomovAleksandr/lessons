@@ -16,12 +16,23 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
 
+//            'csrfCookie' => [
+////                'httpOnly' => true,
+////                'path' => '/admin',
+////            ],
         ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
+//        'user' => [
+//            'identityCookie' => [
+//                'name' => '_backendIdentity',
+//                'path' => '/admin',
+//                'httpOnly' => true,
+//            ],
+//        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -31,11 +42,16 @@ return [
                 '/' => 'goods/index',
 
             ],
-            // ...
+
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend',
+            'name' => 'advanced-backend'
+//            'name' => 'BACKENDSESSID',
+//            'cookieParams' => [
+//                'path' => '/admin',
+//            ],
+
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

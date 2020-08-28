@@ -13,6 +13,7 @@ use yii\widgets\LinkPager;
 
 $this->title = 'ВСЕ КАТЕГОРИИ ТОВАРА';
 //$this->params['breadcrumbs'][] = $this->title;
+//    var_dump($models);
 ?>
 <div class="category-model-index">
 
@@ -28,7 +29,7 @@ $this->title = 'ВСЕ КАТЕГОРИИ ТОВАРА';
                     <div class="product-show">
                         <div class="image">
                             <?php if($model->path_image!==null){ ?>
-                                    <img src="../images/category/<?=$model->path_image?>" alt="no image">
+                                    <img src="images/category/<?=$model->path_image?>" alt="no image">
                            <?php } ?>
                         </div>
                         <div class="capture">
