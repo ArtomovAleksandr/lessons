@@ -35,15 +35,18 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Заказы', 'url' => ['/order/']],
-        ['label' => 'Товар', 'url' => ['/goods/']],
-        ['label' => 'Категории', 'url' => ['/category']],
-        ['label' => 'Производитель', 'url' => ['/factory']],
-        ['label' => 'Валюта', 'url' => ['/currency']],
-        ['label' => 'История валюты', 'url' => ['/currencyhistory']],
-    ];
+    $menuItems = [];
+    if (!Yii::$app->user->isGuest) {
+        $menuItems = [
+            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Заказы', 'url' => ['/order/']],
+            ['label' => 'Товар', 'url' => ['/goods/']],
+            ['label' => 'Категории', 'url' => ['/category']],
+            ['label' => 'Производитель', 'url' => ['/factory']],
+            ['label' => 'Валюта', 'url' => ['/currency']],
+            ['label' => 'История валюты', 'url' => ['/currencyhistory']],
+        ];
+    }
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {

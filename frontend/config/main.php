@@ -13,9 +13,10 @@ return [
     'layout'=>'main_front',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-
+        'homeUrl'=>'/',
         'request' => [
             'csrfParam' => '_csrf-frontend',
+       //     'baseUrl' =>'/',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],

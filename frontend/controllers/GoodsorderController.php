@@ -39,10 +39,7 @@ class GoodsorderController extends Controller
         date_default_timezone_set('Europe/Kiev');
         $date = date('Y-m-d H:i:s');
         $client = new Client();
-        $response = $client->createRequest()
-            ->setMethod('GET')
-            ->setUrl("https://api.telegram.org/bot1<>/sendMessage?chat_id=<>&text=".$date."-Привет%20мир")
-            ->send();
+       //  koд
 
     }
     public function actionIndex()

@@ -37,7 +37,7 @@ AppAssetMainFront::register($this);
                 <span class="d-none d-inline style-fa">+038 050 687-45-18</span>
             </a>
 
-            <a href="/basket">
+            <a href="./basket">
                 <div class="fa fa-shopping-cart  basket" aria-hidden="true">
                     <div id="goods-basket" class="display-off"></div>
                 </div>

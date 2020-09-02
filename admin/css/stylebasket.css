@@ -1,0 +1,204 @@
+.image {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+.product-border{
+    border: black 1px solid !important;
+    border-radius: 10px !important;
+    box-shadow: rgb(117,117,117) -5px 5px 10px 0px;
+    box-sizing: content-box;
+    max-height: content-box !important;
+
+}
+.header{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.select-all{
+    display: inline-block;
+    padding: 10px;
+}
+.delete-position{
+    display: inline-block;
+    float: right;
+    padding: 8px;
+}
+.delete-position button{
+    border: none;
+    background: none;
+}
+.card-item{
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.checkbox-wrap{
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+    align-items: center;
+}
+.cart-item-info{
+    width: calc(100% - 50px);
+}
+.header{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.card-item-title, .vendor, .price-vendor{
+    width: 100%;
+    font-size: 16px;
+    margin: 0; /*изменил */
+    display: flex;
+    align-items: baseline;
+    padding-top: 5px;
+}
+.caterory-name{
+    padding-right: 5px;
+    color: #6a6a6a;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.title{
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+}
+.price-in-vendor{/*добавил */
+    font-weight: 500;
+    color: black;
+    font-size: 20px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.quantity-wrap{
+    display: flex;
+    width: calc(100% - 100px);
+    justify-content: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    align-items: center;
+}
+.quntity-container{
+    display: flex;
+    flex-direction: row;
+}
+.select-quantity{
+    display: flex;
+    align-items: baseline;
+    padding: 8px;
+}
+.select-quantity-button{
+    padding: 0;
+    min-width: 0;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    line-height: 25px;
+    border-radius: 50%;
+    border: 1px black solid;
+}
+.current-quantity-basket{
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.current-quantity-basket input{
+    width: 80px;
+    font-size: 15px;
+    border-radius: 7px;
+    border-color: gray;
+    border-style: solid;
+    text-align: center;
+    height: 100%;
+}
+.lot-packin-basket{
+    margin-right: 5px;
+}
+.price-wrap div{
+    display: inline-block;
+    padding-right: 5px;
+}
+.price-wrap{
+    font-size: 20px;
+    display: flex;
+    /*float: left;*/
+    justify-content: left;
+
+}
+.price-hur{
+    font-weight: 600;
+}
+/*-----------*/
+.buy {
+    color: #000;
+    background-color:beige;
+}
+.buy button{
+    width: 100%;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 7px;
+    margin-bottom: 2px;
+}
+.total-paiment{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+}
+.total-paiment-title, .total-paiment-price, .price-unit{
+    display: flex;
+    font-size: 20px;
+    color: black;
+    padding: 8px;
+}
+.total-paiment-title{
+    margin-left: 8px;
+}
+.total-paiment-price{
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 0;
+}
+.buy-totalpaiment-infoclient{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.info-client{
+    display: flex;
+    flex-wrap: wrap;
+}
+.info-client-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-client-name, .info-client-fone{
+    margin-right: auto;
+    margin-left: auto;
+}
+.client-name, .client-fone {
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.client-fone-data, .client-name-data{
+    padding: 0 5px 5px 5px;
+}

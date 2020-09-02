@@ -13,9 +13,10 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
+  //      'homeUrl' =>'/admin',
         'request' => [
             'csrfParam' => '_csrf-backend',
-
+    //        'baseUrl' =>'/admin'
 //            'csrfCookie' => [
 ////                'httpOnly' => true,
 ////                'path' => '/admin',
@@ -39,7 +40,7 @@ return [
 
 
             'rules' => [
-                '/' => 'goods/index',
+    //            '/' => 'goods/index',
 
             ],
 
