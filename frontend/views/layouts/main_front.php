@@ -6,6 +6,7 @@
 use yii\helpers\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAssetMainFront;
 use common\widgets\Alert;
@@ -29,6 +30,12 @@ AppAssetMainFront::register($this);
     </head>
     <body>
 <?php  $this->beginBody() ?>
+<?php
+   $text ='<div class="fa fa-shopping-cart  basket" aria-hidden="true">
+                    <div id="goods-basket" class="display-off"></div>
+                </div>
+                <span class="d-none d-lg-inline style-fa">Корзина</span>'
+?>
 <div class="container">
     <div class="row mt-2 ml-1 mr-1" id="top">
         <div class="col text-center">
@@ -36,48 +43,23 @@ AppAssetMainFront::register($this);
                 <i class="fa fa-phone"></i>
                 <span class="d-none d-inline style-fa">+038 050 687-45-18</span>
             </a>
-
-            <a href="./basket">
-                <div class="fa fa-shopping-cart  basket" aria-hidden="true">
-                    <div id="goods-basket" class="display-off"></div>
-                </div>
-                <span class="d-none d-lg-inline style-fa">Корзина</span>
-            </a>
+            <?= Html::a($text, ['/basket'], ['class' => 'profile-link']) ?>
+<!--            <a href="--><?//= Url::to('/basket',true) ?><!--">-->
+<!--                <div class="fa fa-shopping-cart  basket" aria-hidden="true">-->
+<!--                    <div id="goods-basket" class="display-off"></div>-->
+<!--                </div>-->
+<!--                <span class="d-none d-lg-inline style-fa">Корзина</span>-->
+<!--            </a>-->
 
         </div>
     </div>
     <div class="row mt-2 mr-1 ml-1" id="logo">
         <div style="width: 181px">
-            <img src="images/resourses/logo2.png" alt="diselexpert.com.ua">
+            <?= Html::img('@web/images/resourses/logo2.png', ['alt' => 'diselexpert.com.ua']) ?>
         </div>
         <div class="col" id="repead-images">
         </div>
     </div>
-<!--    <nav id="menu" class="navbar navbar-expand-lg navbar-light mt-2">-->
-<!--        <a class="navbar-brand color_white" href="#">Меню</a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!---->
-<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--            <ul class="navbar-nav mr-auto color_white">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link color_white_hover" href="#">Отзывы</a>-->
-<!--                                   </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link color_white_hover" href="#">Доставка</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link color_white_hover" href="#">Контакты</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link color_white_hover" href="#">О сервисе</a>-->
-<!--                </li>-->
-<!---->
-<!--            </ul>-->
-<!---->
-<!--        </div>-->
-<!--    </nav>-->
 </div>
 
 <?= $content ?>

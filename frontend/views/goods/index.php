@@ -10,14 +10,10 @@ use yii\widgets\LinkPager;
 $this->title = 'Goods Models';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="goods-model-index">
     <div class="container mt-3">
 
-
-
-        <?php
-     //   echo print_r($factorys);
-        ?>
         <h5>Запчасти категории - <?= $category->name ?></h5>
         <div class="row mb-2">
             <?php foreach ($models as $model): ?>
