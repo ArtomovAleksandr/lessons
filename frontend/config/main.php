@@ -46,11 +46,13 @@ return [
 
         'urlManager' => [
             'enablePrettyUrl' => true,
+        //    'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
                 '/' => 'category/',
-                'goods/<id:\d+>' => 'goods',
-                'page/<page:\d+>' => 'goods/index',
+           //     'frontend/web/' => '/',
+             //   'goods/<id:\d+>' => 'goods',
+             //   'page/<page:\d+>' => 'goods/index',
             ],
         ],
 

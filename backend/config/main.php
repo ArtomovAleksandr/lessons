@@ -13,14 +13,14 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
-  //      'homeUrl' =>'/admin',
+    //    'homeUrl' =>'/admin',
         'request' => [
             'csrfParam' => '_csrf-backend',
-    //        'baseUrl' =>'/admin'
-//            'csrfCookie' => [
-////                'httpOnly' => true,
-////                'path' => '/admin',
-////            ],
+       //     'baseUrl' =>'/admin',
+//           'csrfCookie' => [
+//                'httpOnly' => true,
+//                'path' => '/admin',
+//            ],
         ],
         'user' => [
             'identityClass' => 'common\models\User',
