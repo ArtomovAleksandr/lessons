@@ -17,16 +17,28 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
        //     'baseUrl' =>'/admin',
-//           'csrfCookie' => [
-//                'httpOnly' => true,
-//                'path' => '/admin',
-//            ],
+            'csrfCookie' => [
+            'httpOnly' => true,
+            'path' => '/admin',
+           ],
         ],
+//        'user' => [
+//            'identityClass' => 'common\models\User',
+//            'enableAutoLogin' => true,
+//            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+//        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+            'identityCookie' => [
+                'name' => '_identity-backend',
+                'path' => '/admin',
+                'httpOnly' => true,
+            ],
         ],
+
+
+
 //        'user' => [
 //            'identityCookie' => [
 //                'name' => '_backendIdentity',
@@ -38,21 +50,27 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
 
-
             'rules' => [
     //            '/' => 'goods/index',
 
             ],
 
         ],
-        'session' => [
+  //      'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend'
+//            'name' => 'advanced-backend'
 //            'name' => 'BACKENDSESSID',
 //            'cookieParams' => [
 //                'path' => '/admin',
 //            ],
 
+ //       ],
+        'session' => [
+            // this is the name of the session cookie used for login on the backend
+            'name' => 'advanced-backend',
+            'cookieParams' => [
+                'path' => '/admin',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

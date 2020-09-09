@@ -47,7 +47,7 @@ $script_send = <<< JS
       }
      $.ajax({
       
-       url:'/goodsorder',
+       url:'/goodsorder/index',
        data:{
            name:name,
            fone:fone,

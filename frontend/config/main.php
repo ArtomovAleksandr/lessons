@@ -16,6 +16,7 @@ return [
         'homeUrl'=>'/',
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'enableCsrfValidation'=>false,
        //     'baseUrl' =>'/',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
